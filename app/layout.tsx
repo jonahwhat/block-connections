@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Connections",
-  description: "Group four groups of four!",
+  title: "Block Connections",
+  description: "Group four groups of four Minecraft blocks!",
+   icons: {
+    icon: "/cube.ico"
+  },
 };
 
 export default function RootLayout({

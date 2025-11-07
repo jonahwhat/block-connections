@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { categories } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
+import { useSounds } from "@/app/_hooks/useSounds";
+
 
 export default function useGameLogic() {
   const [gameWords, setGameWords] = useState<Word[]>([]);
@@ -14,6 +16,7 @@ export default function useGameLogic() {
   const [isLost, setIsLost] = useState(false);
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
+  const { playSound } = useSounds();
 
   useEffect(() => {
     const words: Word[] = categories
@@ -27,6 +30,10 @@ export default function useGameLogic() {
   const selectWord = (word: Word): void => {
     const newGameWords = gameWords.map((item) => {
       // Only allow word to be selected if there are less than 4 selected words
+      if (selectedWords.length < 4) {
+        playSound("pop")
+      }
+
       if (word.word === item.word) {
         return {
           ...item,
@@ -42,11 +49,13 @@ export default function useGameLogic() {
 
   const shuffleWords = () => {
     setGameWords([...shuffleArray(gameWords)]);
+    playSound("page")
   };
 
   const deselectAllWords = () => {
     setGameWords(
       gameWords.map((item) => {
+        playSound("equip")
         return { ...item, selected: false };
       })
     );
@@ -86,16 +95,20 @@ export default function useGameLogic() {
     );
 
     if (clearedCategories.length === 3) {
+      playSound("levelup")
       return { result: "win" };
     } else {
+      playSound("ping")
       return { result: "correct" };
     }
   };
 
   const getIncorrectResult = (maxLikeness: number): SubmitResult => {
     setMistakesRemaning(mistakesRemaining - 1);
+    playSound("hurt")
 
     if (mistakesRemaining === 1) {
+      playSound("shatter")
       return { result: "loss" };
     } else if (maxLikeness === 3) {
       return { result: "one-away" };

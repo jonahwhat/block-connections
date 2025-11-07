@@ -25,7 +25,7 @@ export default function useAnimation() {
 
   const animateWrongGuess = async () => {
     setWrongGuessAnimationState(true);
-    await delay(225);
+    await delay(250);
     setWrongGuessAnimationState(false);
   };
 

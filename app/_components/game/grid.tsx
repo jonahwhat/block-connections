@@ -13,7 +13,7 @@ type GridProps = {
 
 export default function Grid(props: GridProps) {
   return (
-    <div className="grid grid-cols-4 gap-2 w-full">
+    <div className="grid grid-cols-4 gap-2 w-full text-wrap">
       {props.clearedCategories.map((category) => (
         <ClearedCategory key={category.category} category={category} />
       ))}

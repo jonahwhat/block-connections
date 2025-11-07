@@ -10,7 +10,7 @@ type CellProps = {
 };
 
 export default function Cell(props: CellProps) {
-  const bgColor = props.cellValue.selected ? "bg-slate-500" : "bg-slate-200";
+  const bgColor = props.cellValue.selected ? "bg-slate-600" : "bg-slate-200";
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
 
   const handleClick = () => {
@@ -24,10 +24,12 @@ export default function Cell(props: CellProps) {
 
   return (
     <button
-      className={`${bgColor} py-6 rounded-md break-all px-1 transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
+      className={`${bgColor} py-4 rounded-md break-all px-1 transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
-      <h2 className={`${textColor} text-xs md:text-lg text-center font-bold`}>
+      <img src={`images\\01\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
+
+      <h2 className={`${textColor} text-xs md:text-base text-center font-bold`}>
         {props.cellValue.word.toUpperCase()}
       </h2>
     </button>

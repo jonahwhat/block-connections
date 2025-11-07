@@ -11,6 +11,7 @@ import useGameLogic from "./_hooks/use-game-logic";
 import usePopup from "./_hooks/use-popup";
 import { SubmitResult, Word } from "./_types";
 import { getPerfection } from "./_utils";
+import { useSounds } from "@/app/_hooks/useSounds";
 
 export default function Home() {
   const [popupState, showPopup] = usePopup();
@@ -33,6 +34,7 @@ export default function Home() {
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [showGameLostModal, setShowGameLostModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const { playSound } = useSounds();
 
   const {
     guessAnimationState,
@@ -43,6 +45,7 @@ export default function Home() {
 
   const handleSubmit = async () => {
     setSubmitted(true);
+    playSound("click")
     await animateGuess(selectedWords);
 
     const result: SubmitResult = getSubmitResult();
@@ -129,12 +132,12 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-14">
+      <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-5/12 mx-auto mt-1">
         <h1 className="text-black text-4xl font-semibold my-4 ml-4">
-          Connections
+          Block Connections
         </h1>
-        <hr className="mb-4 md:mb-4 w-full"></hr>
-        <h1 className="text-black mb-4">Create four groups of four!</h1>
+        <hr className="mb-1 md:mb-1 w-full"></hr>
+        <h1 className="text-black mb-4">Create four groups of four blocks that share something in common!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
@@ -146,9 +149,9 @@ export default function Home() {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className="text-black my-4 md:my-8 mx-8">
-          Mistakes Remaining:{" "}
-          {mistakesRemaining > 0 ? Array(mistakesRemaining).fill("•") : ""}
+        <h2 className="text-black my-4 md:my-4 mx-4">
+          Mistakes Remaining: {" "} 
+          <span className="text-red-600">{'❤︎'.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
       </div>
