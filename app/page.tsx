@@ -3,14 +3,13 @@
 import { useCallback, useState } from "react";
 import ControlButton from "./_components/button/control-button";
 import Grid from "./_components/game/grid";
-import GameLostModal from "./_components/modal/game-lost-modal";
 import GameWonModal from "./_components/modal/game-won-modal";
 import Popup from "./_components/popup";
 import useAnimation from "./_hooks/use-animation";
 import useGameLogic from "./_hooks/use-game-logic";
 import usePopup from "./_hooks/use-popup";
 import { SubmitResult, Word } from "./_types";
-import { getPerfection } from "./_utils";
+import { getPerfection, getMessage } from "./_utils";
 import { useSounds } from "@/app/_hooks/useSounds";
 
 export default function Home() {
@@ -32,7 +31,6 @@ export default function Home() {
   } = useGameLogic();
 
   const [showGameWonModal, setShowGameWonModal] = useState(false);
-  const [showGameLostModal, setShowGameLostModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { playSound } = useSounds();
 
@@ -61,7 +59,7 @@ export default function Home() {
       case "loss":
         showPopup("Better luck next time!");
         await handleLoss();
-        setShowGameLostModal(true);
+        setShowGameWonModal(true);
         break;
       case "win":
         showPopup(getPerfection(mistakesRemaining));
@@ -88,6 +86,7 @@ export default function Home() {
         text="Show Results"
         onClick={() => {
           setShowGameWonModal(true);
+          playSound("click")
         }}
       />
     );
@@ -96,7 +95,7 @@ export default function Home() {
       <ControlButton
         text="Show Results"
         onClick={() => {
-          setShowGameLostModal(true);
+          setShowGameWonModal(true);
         }}
       />
     );
@@ -124,7 +123,7 @@ export default function Home() {
     if (isWon) {
       return showResultsWonButton;
     } else if (isLost) {
-      return showResultsLostButton;
+      return showResultsWonButton;
     } else {
       return inProgressButtons;
     }
@@ -160,11 +159,7 @@ export default function Home() {
         onClose={() => setShowGameWonModal(false)}
         guessHistory={guessHistoryRef.current}
         perfection={getPerfection(mistakesRemaining)}
-      />
-      <GameLostModal
-        isOpen={showGameLostModal}
-        onClose={() => setShowGameLostModal(false)}
-        guessHistory={guessHistoryRef.current}
+        message={getMessage(mistakesRemaining)}
       />
     </>
   );

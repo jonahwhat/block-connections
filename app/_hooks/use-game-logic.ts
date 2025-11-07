@@ -29,11 +29,7 @@ export default function useGameLogic() {
 
   const selectWord = (word: Word): void => {
     const newGameWords = gameWords.map((item) => {
-      // Only allow word to be selected if there are less than 4 selected words
-      if (selectedWords.length < 4) {
-        playSound("pop")
-      }
-
+      playSound("pop")
       if (word.word === item.word) {
         return {
           ...item,

@@ -25,6 +25,21 @@ export const getWordColor = (category: 1 | 2 | 3 | 4): string => {
   }
 };
 
+export const getEmoji = (category: 1 | 2 | 3 | 4): string => {
+  switch (category) {
+    case 1:
+      return "🟨";
+    case 2:
+      return "🟩";
+    case 3:
+      return "🟦";
+    case 4:
+      return "🟪";
+    default:
+      return "🟨";
+  }
+};
+
 export const getPerfection = (mistakesRemaining: number) => {
   switch (mistakesRemaining) {
     case 4:
@@ -33,8 +48,19 @@ export const getPerfection = (mistakesRemaining: number) => {
       return "Nice!";
     case 2:
       return "Good!";
+    case 1:
+      return "Phew!"
     default:
-      return "Phew!";
+      return "Next Time!";
+  }
+};
+
+export const getMessage = (mistakesRemaining: number) => {
+  switch (mistakesRemaining) {
+    case 0:
+      return "You've run out of guesses!";
+    default:
+      return "You've won the game!";
   }
 };
 
