@@ -88,6 +88,7 @@ export default function Home() {
         text="Show Results"
         onClick={() => {
           setShowGameWonModal(true);
+          playSound("click")
         }}
       />
     );
@@ -96,7 +97,7 @@ export default function Home() {
       <ControlButton
         text="Show Results"
         onClick={() => {
-          setShowGameLostModal(true);
+          setShowGameWonModal(true);
         }}
       />
     );
