@@ -133,10 +133,10 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-5/12 mx-auto mt-1">
         <h1 className="text-black text-4xl font-semibold my-4 ml-4">
-          Block Connections
+          Craft Connections
         </h1>
         <hr className="mb-1 md:mb-1 w-full"></hr>
-        <h1 className="text-black mb-4">Create four groups of four blocks that share something in common!</h1>
+        <h1 className="text-black mb-4">Create four groups of four Minecraft blocks that share something in common!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid

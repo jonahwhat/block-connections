@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Block Connections",
+  title: "Craft Connections",
   description: "Group four groups of four Minecraft blocks!",
    icons: {
     icon: "/cube.ico"
