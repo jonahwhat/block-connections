@@ -132,8 +132,8 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-5/12 mx-auto mt-1">
-        <h1 className="text-black text-4xl font-semibold my-4 ml-4">
-          Craft Connections
+        <h1 className="text-black text-4xl font-bold my-4 ml-4">
+          Craft Connections <span className="text-slate-800 font-normal text-2xl ml-2">Puzzle #1</span>
         </h1>
         <hr className="mb-1 md:mb-1 w-full"></hr>
         <h1 className="text-black mb-4">Create four groups of four Minecraft blocks that share something in common!</h1>

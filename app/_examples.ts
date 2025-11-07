@@ -18,7 +18,7 @@ export const categories: Category[] = [
   },
   {
     category: "LEAF BLOCKS",
-    items: ["AZALEA LEAVES", "OAK LEAVES", "MANGROVE LEAVES", "CHERRY LEAVES"],
+    items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
     level: 1,
   },
 ];
