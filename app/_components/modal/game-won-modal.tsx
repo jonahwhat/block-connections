@@ -24,7 +24,7 @@ export default function GameWonModal(props: GameWonModalProps) {
   const handleCopyResults = async () => {
     const resultsText = `Block Connections\nPuzzle #1\n${props.guessHistory
       .map(group => group.map(word => getEmoji(word.level)).join(""))
-      .join("\n")}`;
+      .join("\n")}\nhttps://block-connections.vercel.app/`;
 
     try {
       await navigator.clipboard.writeText(resultsText);
@@ -33,7 +33,7 @@ export default function GameWonModal(props: GameWonModalProps) {
     }
 
     playSound("click")
-    showPopup("Copied results!");
+    showPopup("Copied results to clipboard!");
     await delay(1000);
 
     props.onClose();
