@@ -13,6 +13,7 @@ type GameWonModalProps = {
   onClose: () => void;
   guessHistory: Word[][];
   perfection: string;
+  message: string;
 };
 
 export default function GameWonModal(props: GameWonModalProps) {
@@ -47,7 +48,7 @@ export default function GameWonModal(props: GameWonModalProps) {
           {props.perfection}
         </h1>
         <hr className="mb-2 md:mb-4 w-full"></hr>
-        <h2 className="text-black mb-8">{"You've won the game!"}</h2>
+        <h2 className="text-black mb-8">{props.message}</h2>
         <GuessHistory guessHistory={props.guessHistory} />
         <ControlButton text="Copy Results" onClick={handleCopyResults} />
         <Popup show={popupState.show} message={popupState.message} />

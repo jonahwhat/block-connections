@@ -48,8 +48,19 @@ export const getPerfection = (mistakesRemaining: number) => {
       return "Nice!";
     case 2:
       return "Good!";
+    case 1:
+      return "Phew!"
     default:
-      return "Phew!";
+      return "Next Time!";
+  }
+};
+
+export const getMessage = (mistakesRemaining: number) => {
+  switch (mistakesRemaining) {
+    case 0:
+      return "You've run out of guesses!";
+    default:
+      return "You've won the game!";
   }
 };
 
