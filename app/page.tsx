@@ -139,7 +139,7 @@ export default function Home() {
           Craft Connections <span className="text-slate-800 font-normal text-2xl ml-2">Puzzle #1</span>
         </h1>
         <hr className="mb-1 md:mb-1 w-full"></hr>
-        <h1 className="text-black mb-4">Create four groups of four Minecraft blocks that share something in common!</h1>
+        <h1 className="text-black mb-4" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Create four groups of four Minecraft blocks that share something in common!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
