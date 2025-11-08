@@ -27,7 +27,7 @@ export const puzzleList: { [id: string]: Category[] } = {
 
 "002" : [
     {
-    category: 'YELLOW BLOCKS',
+    category: 'YELLOW DYED BLOCKS',
     items: ["YELLOW CANDLE", "YELLOW WOOL", "YELLOW CONCRETE", "YELLOW TERRACOTTA"],
     level: 1,
   },
