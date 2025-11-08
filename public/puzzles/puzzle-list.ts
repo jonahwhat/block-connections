@@ -27,24 +27,24 @@ export const puzzleList: { [id: string]: Category[] } = {
 
 "002" : [
     {
-    category: 'BLOCKS AFFECTED BY GRAVITY',
-    items: ["MANVIL", "DRAGON EGG", "GRAVEL", "SAND"],
+    category: 'YELLOW BLOCKS',
+    items: ["YELLOW CANDLE", "YELLOW WOOL", "YELLOW CONCRETE", "YELLOW TERRACOTTA"],
+    level: 1,
+  },
+  {
+    category: "BLOCKS THAT GENERATE IN END CITIES",
+    items: ["END ROD", "ENDER CHEST", "END STONE BRICKS", "PURPUR BLOCK"],
     level: 2,
   },
   {
-    category: "BLOCKS WITH SLABS",
-    items: ["CHERRY PLANKS", "TUFF", "NETHER BRICKS", "RED SANDSTONE"],
+    category: "ITEMS YOU CAN WEAR ON YOUR HEAD",
+    items: ["CARVED PUMPKIN", "CREEPER HEAD", "TURTLE SHELL", "PIGLIN HEAD"],
     level: 3,
   },
   {
-    category: "DYEABLE BLOCKS",
-    items: ["CANDLE", "SHULKER BOX", "GLASS", "TERRACOTTA"],
+    category: "ITEMS THAT CAN BE FED TO HORSES",
+    items: ["APPLE", "SUGAR", "HAY BALE", "GOLDEN CARROT"],
     level: 4,
-  },
-  {
-    category: "LEAF BLOCKS",
-    items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
-    level: 1,
   },
 ],
 

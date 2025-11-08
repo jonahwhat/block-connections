@@ -1,13 +1,14 @@
 "use client";
 
-import AnotherPage from "@/app/puzzle/[id]/page"; // relative path
+import PuzzlePage from "@/app/puzzle/[id]/page"; // relative path
+import { currentPuzzleString } from "../public/puzzles/current";
 
 export default function Home() {
   
   return (
     <>
-    <AnotherPage params={{
-        id: "001"
+    <PuzzlePage params={{
+        id: currentPuzzleString
       }}      
     />
     </>
