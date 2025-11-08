@@ -34,7 +34,7 @@ export default function ArchiveList(props: ArchiveProps) {
         </button>
         <Link href={`/`} className={`w-full text-center`}>
             <h2 className={`${alfaSlabOne.className} p-10 underline text-gray-900 text-center font-bold text-2xl`}>
-                Back to Today's Puzzle
+                Back to Today&apos;s Puzzle
             </h2>
         </Link>
     </div>
