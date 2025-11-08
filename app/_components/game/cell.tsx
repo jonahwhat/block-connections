@@ -30,7 +30,7 @@ export default function Cell(props: CellProps) {
     >
       <img src={`\\images\\${props.id}\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
 
-      <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.6rem, 2vw, 1.0rem)" }}>
+      <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.6rem, 2vw, 1.1rem)" }}>
         {props.cellValue.word.toUpperCase()}
       </h2>
     </button>

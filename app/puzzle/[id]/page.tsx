@@ -14,10 +14,16 @@ import { useSounds } from "@/app/_hooks/useSounds";
 import { Analytics } from "@vercel/analytics/next"
 import { redirect } from "next/navigation";
 import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
+import { Alfa_Slab_One } from 'next/font/google'
 
 type PuzzlePageProps = {
   params: { id: string };
 };
+
+const alfaSlabOne = Alfa_Slab_One({
+  subsets: ['latin'],
+  weight: "400"
+});
 
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
@@ -131,18 +137,18 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   // if id > maxid or its an invalid id, route to main page
   if (!validPuzzleList.includes(id)) {
-    redirect("/"); // Send user back to main page
+    redirect("/");
   }
 
   return (
     <>
       <Analytics />
-      <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-5/12 mx-auto mt-1">
-        <h1 className="text-black text-4xl font-bold my-2 ml-4" style={{ fontSize: "clamp(1.7rem, 2vw, 2.5rem)" }}>
-          Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2" style={{ fontSize: "clamp(0.7rem, 2vw, 1.4rem)" }}>Puzzle #{ parseInt(id) }</span>
+      <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
+        <h1 className={`${alfaSlabOne.className} text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
+          Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>Puzzle #{ parseInt(id) }</span>
         </h1>
-        <hr className="mb-1 md:mb-1 w-full"></hr>
-        <h1 className="text-slate-800 my-2" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Group four Minecraft items that are related!</h1>
+        <hr className="w-full"></hr>
+        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
@@ -155,9 +161,9 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className="text-black my-4 md:my-4 mx-4">
+        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>
           Mistakes Remaining: {" "} 
-          <span className="text-red-700">{'❤︎ '.repeat(mistakesRemaining)}</span>
+          <span className="text-red-700 text-xl">{'❤︎ '.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
       </div>

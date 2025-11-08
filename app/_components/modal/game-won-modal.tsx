@@ -35,7 +35,7 @@ export default function GameWonModal(props: GameWonModalProps) {
 
     playSound("click")
     showPopup("Copied results to clipboard!");
-    await delay(1000);
+    await delay(1250);
 
     props.onClose();
   };
