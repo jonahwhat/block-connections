@@ -26,3 +26,8 @@ export type CellAnimationState = {
   show: boolean;
   index: number;
 };
+
+export type PuzzleList = {
+  puzzleid: string;
+  date: string
+};

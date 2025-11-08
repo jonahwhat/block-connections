@@ -7,6 +7,7 @@ type CellProps = {
   onClick: (word: Word) => void;
   animateGuess: boolean;
   animateWrongGuess: boolean;
+  id: string;
 };
 
 export default function Cell(props: CellProps) {
@@ -27,9 +28,9 @@ export default function Cell(props: CellProps) {
       className={`${bgColor} py-3 rounded-md break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
-      <img src={`images\\01\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
+      <img src={`\\images\\${props.id}\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
 
-      <h2 className={`${textColor} text-xs md:text-base text-center font-bold`} style={{ fontSize: "clamp(0.6rem, 2vw, 1.0rem)" }}>
+      <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.5rem, 2vw, 1.0rem)" }}>
         {props.cellValue.word.toUpperCase()}
       </h2>
     </button>

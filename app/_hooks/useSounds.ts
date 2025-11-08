@@ -5,14 +5,14 @@ export function useSounds() {
 
   useEffect(() => {
     const soundFiles: Record<string, string> = {
-      pop: "sounds/pop.mp3",
-      page: "sounds/page.mp3",
-      hurt: "sounds/hurt.mp3",
-      levelup: "sounds/levelup.mp3",
-      shatter: "sounds/shatter.mp3",
-      equip: "sounds/equip.mp3",
-      click: "sounds/click.mp3",
-      ping: "sounds/ping.mp3",
+      pop: "/sounds/pop.mp3",
+      page: "/sounds/page.mp3",
+      hurt: "/sounds/hurt.mp3",
+      levelup: "/sounds/levelup.mp3",
+      shatter: "/sounds/shatter.mp3",
+      equip: "/sounds/equip.mp3",
+      click: "/sounds/click.mp3",
+      ping: "/sounds/ping.mp3",
     };
 
     const loadedSounds: Record<string, HTMLAudioElement> = {};
