@@ -4,6 +4,7 @@ import ClearedCategory from "./cleared-category";
 
 type GridProps = {
   words: Word[];
+  id: string;
   selectedWords: Word[];
   clearedCategories: Category[];
   onClick: (word: Word) => void;
@@ -20,6 +21,7 @@ export default function Grid(props: GridProps) {
       {props.words.map((item) => (
         <Cell
           key={item.word}
+          id={props.id}
           cellValue={item}
           onClick={props.onClick}
           animateGuess={

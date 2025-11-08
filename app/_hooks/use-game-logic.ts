@@ -1,16 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { categories } from "../_examples";
+import { puzzleList } from "../../public/puzzles/puzzle-list";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 import { useSounds } from "@/app/_hooks/useSounds";
 
 
-export default function useGameLogic() {
+export default function useGameLogic(id: string) {
   const [gameWords, setGameWords] = useState<Word[]>([]);
   const selectedWords = useMemo(
     () => gameWords.filter((item) => item.selected),
     [gameWords]
   );
+  
+  const categories: Category[] = puzzleList[id]
+
   const [clearedCategories, setClearedCategories] = useState<Category[]>([]);
   const [isWon, setIsWon] = useState(false);
   const [isLost, setIsLost] = useState(false);
