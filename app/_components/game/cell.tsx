@@ -25,7 +25,7 @@ export default function Cell(props: CellProps) {
 
   return (
     <button
-      className={`${bgColor} py-3 rounded-md break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
+      className={`${bgColor} py-3 rounded-md break-all transition ease-in-out h-32 ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
       <img src={`\\images\\${props.id}\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
