@@ -15,6 +15,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { redirect } from "next/navigation";
 import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
 import { Alfa_Slab_One } from 'next/font/google'
+import Link from "next/link";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -166,7 +167,13 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
           <span className="text-red-700 text-xl">{'❤︎ '.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
+        <Link href={`/archive`} className={`w-full text-center`}>
+                    <h2 className={`${alfaSlabOne.className} underline text-gray-900 text-center font-bold text-2xl`}>
+                Previous Puzzles
+            </h2>
+        </Link>
       </div>
+      
       <GameWonModal
         isOpen={showGameWonModal}
         onClose={() => setShowGameWonModal(false)}
