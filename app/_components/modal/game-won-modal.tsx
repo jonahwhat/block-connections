@@ -42,7 +42,7 @@ export default function GameWonModal(props: GameWonModalProps) {
 
   return (
     <GameModal isOpen={props.isOpen} onClose={props.onClose}>
-      <div className="flex flex-col items-center justify-center px-12">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-black text-4xl font-black my-1 ml-1">
           {props.perfection}
         </h1>
