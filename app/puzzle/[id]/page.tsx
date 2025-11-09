@@ -30,6 +30,10 @@ const alfaSlabOne = Alfa_Slab_One({
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
   const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
+  const [playYes] = useSound('/sounds/villageryes.mp3', {volume: 0.5,});
+  const playSoundYes = () => {
+    playYes()
+  };
   const router = useRouter();
 
   const [popupState, showPopup] = usePopup();
@@ -156,11 +160,13 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
     <>
       <Analytics />
       <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
+      <div onClick={playSoundYes}>
         <h1 className={`${alfaSlabOne.className} text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
           Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>Puzzle #{ parseInt(id) }</span>
         </h1>
         <hr className="w-full"></hr>
         <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.85rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
+        </div>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid

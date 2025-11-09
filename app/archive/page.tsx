@@ -6,6 +6,7 @@ import { validPuzzleList } from "../../public/puzzles/valid-puzzles";
 import ArchiveList from "../_components/archive/archive-list";
 import { currentPuzzleString } from "@/public/puzzles/current";
 import Link from "next/link";
+import useSound from "use-sound";
 
 
 const alfaSlabOne = Alfa_Slab_One({
@@ -14,6 +15,12 @@ const alfaSlabOne = Alfa_Slab_One({
 });
 
 export default function PuzzlePage() {
+
+    const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
+    const playSoundClick = () => {
+        playClick()
+      };
+  
   return (
     <>
       <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
@@ -27,7 +34,7 @@ export default function PuzzlePage() {
           currentPuzzle={currentPuzzleString}
         />
 
-          <Link href={`/`} className={`w-full text-center`}>
+          <Link href={`/`} className={`w-full text-center`} onClick={playSoundClick}>
             <h2 className={`${alfaSlabOne.className} p-10 underline text-gray-900 text-center font-bold text-2xl`}>
                 Today&apos;s Puzzle
             </h2>
