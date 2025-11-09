@@ -11,7 +11,7 @@ export default function useGameLogic(id: string) {
   });
 
   const [playPop] = useSound('/sounds/pop.mp3', {
-    volume: 0.15,
+    volume: 0.1,
   });
 
   const [playEquip] = useSound('/sounds/equip.mp3', {
@@ -19,7 +19,7 @@ export default function useGameLogic(id: string) {
   });
 
   const [playLevelup] = useSound('/sounds/levelup.mp3', {
-    volume: 0.1,
+    volume: 0.3,
   });
 
   const [playHurt] = useSound('/sounds/hurt.mp3', {
