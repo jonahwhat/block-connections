@@ -5,6 +5,7 @@ import { Alfa_Slab_One } from 'next/font/google'
 import { validPuzzleList } from "../../public/puzzles/valid-puzzles";
 import ArchiveList from "../_components/archive/archive-list";
 import { currentPuzzleString } from "@/public/puzzles/current";
+import Link from "next/link";
 
 
 const alfaSlabOne = Alfa_Slab_One({
@@ -25,6 +26,12 @@ export default function PuzzlePage() {
           validPuzzleList={validPuzzleList}
           currentPuzzle={currentPuzzleString}
         />
+
+          <Link href={`/`} className={`w-full text-center`}>
+            <h2 className={`${alfaSlabOne.className} p-10 underline text-gray-900 text-center font-bold text-2xl`}>
+                Today&apos;s Puzzle
+            </h2>
+        </Link>
         </div>
     </>
   );

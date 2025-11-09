@@ -16,6 +16,7 @@ import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
 import { Alfa_Slab_One } from 'next/font/google'
 import Link from "next/link";
 import useSound from "use-sound";
+import { useRouter } from "next/navigation";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -29,6 +30,7 @@ const alfaSlabOne = Alfa_Slab_One({
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
   const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
+  const router = useRouter();
 
   const [popupState, showPopup] = usePopup();
   const {
@@ -98,6 +100,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const renderControlButtons = () => {
     const showResultsWonButton = (
+      <div className="flex gap-2 mb-12">
       <ControlButton
         text="Show Results"
         onClick={() => {
@@ -105,6 +108,14 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
           playClick()
         }}
       />
+      <ControlButton
+        text="Previous Puzzles"
+        onClick={() => {
+          router.push('/archive')
+          playClick()
+        }}
+      />
+      </div>
     );
 
     const inProgressButtons = (
@@ -167,11 +178,6 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
           <span className="text-red-700 text-xl">{'❤︎ '.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
-        <Link href={`/archive`} className={`w-full text-center`}>
-                    <h2 className={`${alfaSlabOne.className} underline text-gray-900 text-center font-bold text-2xl`}>
-                Previous Puzzles
-            </h2>
-        </Link>
       </div>
       
       <GameWonModal
