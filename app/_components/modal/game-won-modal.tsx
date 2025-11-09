@@ -5,8 +5,7 @@ import GuessHistory from "../guess-history";
 import GameModal from "./game-modal";
 import Popup from "@/app/_components/popup";
 import usePopup from "@/app/_hooks/use-popup";
-import { useSounds } from "@/app/_hooks/useSounds";
-
+import useSound from "use-sound";
 
 type GameWonModalProps = {
   isOpen: boolean;
@@ -19,8 +18,7 @@ type GameWonModalProps = {
 
 export default function GameWonModal(props: GameWonModalProps) {
   const [popupState, showPopup] = usePopup();
-  const { playSound } = useSounds();
-  
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
 
   const handleCopyResults = async () => {
     const resultsText = `Craft Connections ⛏️\nPuzzle #${parseInt(props.id)}\n${props.guessHistory
@@ -33,7 +31,7 @@ export default function GameWonModal(props: GameWonModalProps) {
       console.error("Failed to copy: ", err);
     }
 
-    playSound("click")
+    playClick()
     showPopup("Copied results to clipboard!");
     await delay(1250);
 
@@ -44,7 +42,7 @@ export default function GameWonModal(props: GameWonModalProps) {
 
   return (
     <GameModal isOpen={props.isOpen} onClose={props.onClose}>
-      <div className="flex flex-col items-center justify-center px-12">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-black text-4xl font-black my-1 ml-1">
           {props.perfection}
         </h1>

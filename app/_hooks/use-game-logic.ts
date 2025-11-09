@@ -2,10 +2,38 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { puzzleList } from "../../public/puzzles/puzzle-list";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
-import { useSounds } from "@/app/_hooks/useSounds";
-
+import useSound from 'use-sound';
 
 export default function useGameLogic(id: string) {
+
+  const [playPageFlip] = useSound('/sounds/page.mp3', {
+    volume: 0.5,
+  });
+
+  const [playPop] = useSound('/sounds/pop.mp3', {
+    volume: 0.1,
+  });
+
+  const [playEquip] = useSound('/sounds/equip.mp3', {
+    volume: 0.2,
+  });
+
+  const [playLevelup] = useSound('/sounds/levelup.mp3', {
+    volume: 0.3,
+  });
+
+  const [playHurt] = useSound('/sounds/hurt.mp3', {
+    volume: 0.4,
+  });
+  
+  const [playShatter] = useSound('/sounds/shatter.mp3', {
+    volume: 0.2,
+  });
+
+  const [playPing] = useSound('/sounds/ping.mp3', {
+    volume: 0.2,
+  });
+
   const [gameWords, setGameWords] = useState<Word[]>([]);
   const selectedWords = useMemo(
     () => gameWords.filter((item) => item.selected),
@@ -19,7 +47,6 @@ export default function useGameLogic(id: string) {
   const [isLost, setIsLost] = useState(false);
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
-  const { playSound } = useSounds();
 
   useEffect(() => {
     const words: Word[] = categories
@@ -32,7 +59,7 @@ export default function useGameLogic(id: string) {
 
   const selectWord = (word: Word): void => {
     const newGameWords = gameWords.map((item) => {
-      playSound("pop")
+      playPop()
       if (word.word === item.word) {
         return {
           ...item,
@@ -48,13 +75,13 @@ export default function useGameLogic(id: string) {
 
   const shuffleWords = () => {
     setGameWords([...shuffleArray(gameWords)]);
-    playSound("page")
+    playPageFlip()
   };
 
   const deselectAllWords = () => {
     setGameWords(
       gameWords.map((item) => {
-        playSound("equip")
+        playEquip()
         return { ...item, selected: false };
       })
     );
@@ -94,20 +121,19 @@ export default function useGameLogic(id: string) {
     );
 
     if (clearedCategories.length === 3) {
-      playSound("levelup")
+      playLevelup()
       return { result: "win" };
     } else {
-      playSound("ping")
+      playPing()
       return { result: "correct" };
     }
   };
 
   const getIncorrectResult = (maxLikeness: number): SubmitResult => {
     setMistakesRemaning(mistakesRemaining - 1);
-    playSound("hurt")
-
+    playHurt()
     if (mistakesRemaining === 1) {
-      playSound("shatter")
+      playShatter()
       return { result: "loss" };
     } else if (maxLikeness === 3) {
       return { result: "one-away" };

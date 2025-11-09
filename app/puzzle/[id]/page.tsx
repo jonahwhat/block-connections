@@ -10,12 +10,13 @@ import useGameLogic from "../../_hooks/use-game-logic";
 import usePopup from "../../_hooks/use-popup";
 import { SubmitResult, Word } from "../../_types";
 import { getPerfection, getMessage } from "../../_utils";
-import { useSounds } from "@/app/_hooks/useSounds";
 import { Analytics } from "@vercel/analytics/next"
 import { redirect } from "next/navigation";
 import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
 import { Alfa_Slab_One } from 'next/font/google'
 import Link from "next/link";
+import useSound from "use-sound";
+import { useRouter } from "next/navigation";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -28,6 +29,12 @@ const alfaSlabOne = Alfa_Slab_One({
 
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
+  const [playYes] = useSound('/sounds/villageryes.mp3', {volume: 0.5,});
+  const playSoundYes = () => {
+    playYes()
+  };
+  const router = useRouter();
 
   const [popupState, showPopup] = usePopup();
   const {
@@ -48,7 +55,6 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { playSound } = useSounds();
 
   const {
     guessAnimationState,
@@ -59,7 +65,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const handleSubmit = async () => {
     setSubmitted(true);
-    playSound("click")
+    playClick()
     await animateGuess(selectedWords);
 
     const result: SubmitResult = getSubmitResult();
@@ -98,13 +104,22 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const renderControlButtons = () => {
     const showResultsWonButton = (
+      <div className="flex gap-2 mb-12">
       <ControlButton
         text="Show Results"
         onClick={() => {
           setShowGameWonModal(true);
-          playSound("click")
+          playClick()
         }}
       />
+      <ControlButton
+        text="Previous Puzzles"
+        onClick={() => {
+          router.push('/archive')
+          playClick()
+        }}
+      />
+      </div>
     );
 
     const inProgressButtons = (
@@ -145,11 +160,13 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
     <>
       <Analytics />
       <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
-        <h1 className={`${alfaSlabOne.className} text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
+      <div className="w-full" onClick={playSoundYes}>
+        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
           Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>Puzzle #{ parseInt(id) }</span>
         </h1>
         <hr className="w-full"></hr>
-        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
+        <h1 className="text-slate-800 my-1 text-center" style={{ fontSize: "clamp(0.85rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
+        </div>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
@@ -162,16 +179,11 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>
+        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(1rem, 2vw, 1.0rem)" }}>
           Mistakes Remaining: {" "} 
-          <span className="text-red-700 text-xl">{'❤︎ '.repeat(mistakesRemaining)}</span>
+          <span className="text-red-600">{'❤︎ '.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
-        <Link href={`/archive`} className={`w-full text-center`}>
-                    <h2 className={`${alfaSlabOne.className} underline text-gray-900 text-center font-bold text-2xl`}>
-                Previous Puzzles
-            </h2>
-        </Link>
       </div>
       
       <GameWonModal
