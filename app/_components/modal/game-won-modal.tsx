@@ -18,7 +18,7 @@ type GameWonModalProps = {
 
 export default function GameWonModal(props: GameWonModalProps) {
   const [popupState, showPopup] = usePopup();
-  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.2,});
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
 
   const handleCopyResults = async () => {
     const resultsText = `Craft Connections ⛏️\nPuzzle #${parseInt(props.id)}\n${props.guessHistory

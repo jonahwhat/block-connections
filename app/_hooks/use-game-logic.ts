@@ -7,7 +7,7 @@ import useSound from 'use-sound';
 export default function useGameLogic(id: string) {
 
   const [playPageFlip] = useSound('/sounds/page.mp3', {
-    volume: 0.2,
+    volume: 0.5,
   });
 
   const [playPop] = useSound('/sounds/pop.mp3', {
@@ -23,11 +23,11 @@ export default function useGameLogic(id: string) {
   });
 
   const [playHurt] = useSound('/sounds/hurt.mp3', {
-    volume: 0.25,
+    volume: 0.4,
   });
   
   const [playShatter] = useSound('/sounds/shatter.mp3', {
-    volume: 0.1,
+    volume: 0.2,
   });
 
   const [playPing] = useSound('/sounds/ping.mp3', {

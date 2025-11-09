@@ -28,7 +28,7 @@ const alfaSlabOne = Alfa_Slab_One({
 
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
-  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.2,});
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
 
   const [popupState, showPopup] = usePopup();
   const {
