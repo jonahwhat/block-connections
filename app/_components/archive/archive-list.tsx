@@ -19,16 +19,16 @@ export default function ArchiveList(props: ArchiveProps) {
             <h2 className={`text-black text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.3rem)" }}>
                 Puzzle #{parseInt(item)}
             </h2>
-            <h3 className="text-gray-500">
-                Unsolved
+            <h3 className="text-gray-600">
+                Click to play!
             </h3>
         </Link>
       ))}
       <button  className={`bg-zinc-100 py-5 rounded-md text-center`}>
-            <h2 className={`text-zinc-600 text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.3rem)" }}>
+            <h2 className={`text-zinc-400 text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.3rem)" }}>
                 Puzzle #{parseInt(props.currentPuzzle) + 1}
             </h2>
-            <h3 className="text-gray-500">
+            <h3 className="text-gray-400">
                 Coming soon!
             </h3>
         </button>
