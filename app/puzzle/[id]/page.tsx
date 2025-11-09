@@ -10,12 +10,12 @@ import useGameLogic from "../../_hooks/use-game-logic";
 import usePopup from "../../_hooks/use-popup";
 import { SubmitResult, Word } from "../../_types";
 import { getPerfection, getMessage } from "../../_utils";
-import { useSounds } from "@/app/_hooks/useSounds";
 import { Analytics } from "@vercel/analytics/next"
 import { redirect } from "next/navigation";
 import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
 import { Alfa_Slab_One } from 'next/font/google'
 import Link from "next/link";
+import useSound from "use-sound";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -28,6 +28,7 @@ const alfaSlabOne = Alfa_Slab_One({
 
 export default function PuzzlePage({ params }: PuzzlePageProps) {
   const { id } = params;
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.2,});
 
   const [popupState, showPopup] = usePopup();
   const {
@@ -48,7 +49,6 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { playSound } = useSounds();
 
   const {
     guessAnimationState,
@@ -59,7 +59,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   const handleSubmit = async () => {
     setSubmitted(true);
-    playSound("click")
+    playClick()
     await animateGuess(selectedWords);
 
     const result: SubmitResult = getSubmitResult();
@@ -102,7 +102,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
         text="Show Results"
         onClick={() => {
           setShowGameWonModal(true);
-          playSound("click")
+          playClick()
         }}
       />
     );
