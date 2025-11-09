@@ -6,10 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Craft Connections",
-  description: "Group four groups of four Minecraft blocks!",
+  description: "Group four Minecraft items together that are related!",
    icons: {
     icon: "/cube.ico"
   },
+  keywords: "Minecraft, Connections, craft, connectionscraft, craftconnections, puzzle game, wordle, word game", 
 };
 
 export default function RootLayout({

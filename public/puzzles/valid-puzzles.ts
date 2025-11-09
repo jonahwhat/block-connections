@@ -1,4 +1,5 @@
 export const validPuzzleList: string[] = [
     "001",
-    "002"
+    "002",
+    "003"
 ]
