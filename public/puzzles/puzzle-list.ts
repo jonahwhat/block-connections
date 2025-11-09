@@ -50,24 +50,47 @@ export const puzzleList: { [id: string]: Category[] } = {
 
 "003" : [
     {
-    category: 'BLOCKS AFFECTED BY GRAVITY',
-    items: ["MANVIL", "DRAGON EGG", "GRAVEL", "SAND"],
+    category: 'ITEMS USED TO CRAFT A CAKE',
+    items: ["MILK BUCKET", "SUGAR", "EGG", "WHEAT"],
     level: 2,
   },
   {
-    category: "BLOCKS WITH SLABS",
-    items: ["CHERRY PLANKS", "TUFF", "NETHER BRICKS", "RED SANDSTONE"],
+    category: "FOUND IN AMETHYST GEODES",
+    items: ["AMETHYST SHARD", "BLOCK OF AMETHYST", "CALCITE", "SMOOTH BASALT"],
     level: 3,
+  },
+  {
+    category: "MATERIALS USED IN ARMOR TRIMS",
+    items: ["REDSTONE DUST", "IRON INGOT", "NETHER QUARTZ", "LAPIS LAZULI"],
+    level: 4,
+  },
+  {
+    category: "CAN BE USED AS FUEL IN FURNACES",
+    items: ["COAL", "OAK PLANKS", "LAVA BUCKET", "BLAZE ROD"],
+    level: 1,
+  },
+],
+
+"004" : [
+    {
+    category: 'BLOCKS AFFECTED BY GRAVITY',
+    items: ["MANVIL", "DRAGON EGG", "GRAVEL", "SAND"],
+    level: 1,
+  },
+  {
+    category: "BLOCKS FOUND IN AN AMETHYST GEODE",
+    items: ["CHERRY PLANKS", "TUFF", "NETHER BRICKS", "RED SANDSTONE"],
+    level: 2,
   },
   {
     category: "DYEABLE BLOCKS",
     items: ["CANDLE", "SHULKER BOX", "GLASS", "TERRACOTTA"],
-    level: 4,
+    level: 3,
   },
   {
     category: "LEAF BLOCKS",
     items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
-    level: 1,
+    level: 4,
   },
 ]
 
