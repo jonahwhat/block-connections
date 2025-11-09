@@ -160,7 +160,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
           Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>Puzzle #{ parseInt(id) }</span>
         </h1>
         <hr className="w-full"></hr>
-        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
+        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.85rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
@@ -173,9 +173,9 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>
+        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(1rem, 2vw, 1.0rem)" }}>
           Mistakes Remaining: {" "} 
-          <span className="text-red-700 text-xl">{'❤︎ '.repeat(mistakesRemaining)}</span>
+          <span className="text-red-600">{'❤︎ '.repeat(mistakesRemaining)}</span>
         </h2>
         {renderControlButtons()}
       </div>
