@@ -7,7 +7,7 @@ type GuessHistoryProps = {
 
 export default function GuessHistory(props: GuessHistoryProps) {
   return (
-    <div className="grid grid-cols-4 gap-y-1 mb-12 gap-1">
+    <div className="grid grid-cols-4 gap-1 mb-4">
       {props.guessHistory.map((guesses) =>
         guesses.map((word, index) => (
           <div

@@ -12,6 +12,7 @@
     "@vercel/analytics": "^1.5.0",
     "next": "14.1.0",
     "react": "^18",
+    "react-countdown": "^2.3.6",
     "react-dom": "^18",
     "use-sound": "^5.0.0"
   },

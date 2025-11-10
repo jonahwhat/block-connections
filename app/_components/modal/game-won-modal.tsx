@@ -6,6 +6,7 @@ import GameModal from "./game-modal";
 import Popup from "@/app/_components/popup";
 import usePopup from "@/app/_hooks/use-popup";
 import useSound from "use-sound";
+import CountdownTimer from "../countdown";
 
 type GameWonModalProps = {
   isOpen: boolean;
@@ -49,6 +50,10 @@ export default function GameWonModal(props: GameWonModalProps) {
         <hr className="mb-2 md:mb-4 w-full"></hr>
         <h2 className="text-black mb-2">{props.message}</h2>
         <GuessHistory guessHistory={props.guessHistory} />
+        <h2 className="text-black mb-3">New puzzle in {" "}
+          <CountdownTimer/>
+        </h2>
+
         <ControlButton text="Copy Results" onClick={handleCopyResults} />
         <Popup show={popupState.show} message={popupState.message} />
       </div>
