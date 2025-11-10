@@ -7,6 +7,7 @@ import ArchiveList from "../_components/archive/archive-list";
 import { currentPuzzleString } from "@/public/puzzles/current";
 import Link from "next/link";
 import useSound from "use-sound";
+import { Analytics } from "@vercel/analytics/next"
 
 
 const alfaSlabOne = Alfa_Slab_One({
@@ -23,6 +24,7 @@ export default function PuzzlePage() {
   
   return (
     <>
+      <Analytics />
       <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
         <h1 className={`${alfaSlabOne.className} text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
           Craft Connections
