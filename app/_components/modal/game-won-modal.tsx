@@ -7,6 +7,13 @@ import Popup from "@/app/_components/popup";
 import usePopup from "@/app/_hooks/use-popup";
 import useSound from "use-sound";
 import CountdownTimer from "../countdown";
+import { Alfa_Slab_One } from 'next/font/google'
+
+const alfaSlabOne = Alfa_Slab_One({
+  subsets: ['latin'],
+  weight: "400"
+});
+
 
 type GameWonModalProps = {
   isOpen: boolean;
@@ -44,7 +51,7 @@ export default function GameWonModal(props: GameWonModalProps) {
   return (
     <GameModal isOpen={props.isOpen} onClose={props.onClose}>
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-black text-4xl font-black my-1 ml-1">
+        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`}>
           {props.perfection}
         </h1>
         <hr className="mb-2 md:mb-4 w-full"></hr>
