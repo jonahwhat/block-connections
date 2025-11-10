@@ -73,23 +73,23 @@ export const puzzleList: { [id: string]: Category[] } = {
 
 "004" : [
     {
-    category: 'BLOCKS AFFECTED BY GRAVITY',
-    items: ["MANVIL", "DRAGON EGG", "GRAVEL", "SAND"],
-    level: 1,
-  },
-  {
-    category: "BLOCKS FOUND IN AN AMETHYST GEODE",
-    items: ["CHERRY PLANKS", "TUFF", "NETHER BRICKS", "RED SANDSTONE"],
-    level: 2,
-  },
-  {
-    category: "DYEABLE BLOCKS",
-    items: ["CANDLE", "SHULKER BOX", "GLASS", "TERRACOTTA"],
+    category: 'FOUND IN JUNGLES',
+    items: ["PANDA", "JUNGLE LEAVES", "BAMBOO", "COCOA"],
     level: 3,
   },
   {
-    category: "LEAF BLOCKS",
-    items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
+    category: "BLOCKS ADDED IN APRIL FOOLS UPDATES",
+    items: ["BLOCK OF AMBER", "POTONE", "COPPER SINK", "CHEESE"],
+    level: 2,
+  },
+  {
+    category: "STAGES OF COPPER",
+    items: ["BLOCK OF COPPER", "EXPOSED COPPER", "WEATHERED COPPER", "OXIDIZED COPPER"],
+    level: 1,
+  },
+  {
+    category: "PIGLIN BARTERING TRADES",
+    items: ["BLACKSTONE", "SOUL SAND", "DRIED GHAST", "OBSIDIAN"],
     level: 4,
   },
 ]

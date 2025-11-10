@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Alfa_Slab_One } from 'next/font/google'
 import useSound from "use-sound";
+import CountdownTimer from "../countdown";
 
 const alfaSlabOne = Alfa_Slab_One({
   subsets: ['latin'],
@@ -41,7 +42,7 @@ export default function ArchiveList(props: ArchiveProps) {
                 Puzzle #{parseInt(props.currentPuzzle) + 1}
             </h2>
             <h3 className="text-gray-400">
-                Coming soon!
+                New puzzle in <CountdownTimer/>
             </h3>
         </button>
     </div>
