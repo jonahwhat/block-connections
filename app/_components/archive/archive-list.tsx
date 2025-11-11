@@ -17,11 +17,21 @@ type ArchiveProps = {
 
 export default function ArchiveList(props: ArchiveProps) {
 
+  if (typeof window == 'undefined') {
+    return(
+      <></>
+    )
+  }
+
   const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
   const playSoundClick = () => {playClick()};
   const [playNo] = useSound('/sounds/villagerno.mp3', {volume: 0.4,});
   const playSoundNo = () => {playNo()};
+  
   const stats = JSON.parse(localStorage.getItem("puzzleStatistics") ?? "{}");
+
+
+
 
   function getPuzzleColorClass(id: string) {
     if (!stats[id]) {  return "bg-slate-200 hover:bg-slate-300";}
