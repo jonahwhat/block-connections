@@ -17,10 +17,9 @@ const alfaSlabOne = Alfa_Slab_One({
 
 export default function PuzzlePage() {
 
-    const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
-    const playSoundClick = () => {
-        playClick()
-      };
+  const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
+  const playSoundClick = () => {playClick()};
+
   
   return (
     <>

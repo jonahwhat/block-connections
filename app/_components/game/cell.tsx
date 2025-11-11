@@ -13,6 +13,7 @@ type CellProps = {
 export default function Cell(props: CellProps) {
   const bgColor = props.cellValue.selected ? "bg-slate-600" : "bg-slate-200";
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
+  const hover = props.cellValue.selected ? "" : "sm:hover:bg-slate-300";
 
   const handleClick = () => {
     props.onClick(props.cellValue);
@@ -25,7 +26,7 @@ export default function Cell(props: CellProps) {
 
   return (
     <button
-      className={`${bgColor} py-3 rounded-md break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
+      className={`${bgColor} ${hover} py-3 rounded-md break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
       <img src={`\\images\\${props.id}\\${props.cellValue.word.toLowerCase()}.png`} className="mx-auto" width="70" height="70" draggable="false"></img>
