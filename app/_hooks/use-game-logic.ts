@@ -3,6 +3,7 @@ import { puzzleList } from "../../public/puzzles/puzzle-list";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 import useSound from 'use-sound';
+import savePuzzleStatistics from "./create-puzzle-statistic";
 
 export default function useGameLogic(id: string) {
 
@@ -33,6 +34,8 @@ export default function useGameLogic(id: string) {
   const [playPing] = useSound('/sounds/ping.mp3', {
     volume: 0.2,
   });
+
+  const dateStarted = Date.now()
 
   const [gameWords, setGameWords] = useState<Word[]>([]);
   const selectedWords = useMemo(
@@ -82,6 +85,14 @@ export default function useGameLogic(id: string) {
     setGameWords(
       gameWords.map((item) => {
         playEquip()
+        return { ...item, selected: false };
+      })
+    );
+  };
+
+    const deselectAllWordsNoSound = () => {
+    setGameWords(
+      gameWords.map((item) => {
         return { ...item, selected: false };
       })
     );
@@ -147,7 +158,8 @@ export default function useGameLogic(id: string) {
       (category) => !clearedCategories.includes(category)
     );
 
-    deselectAllWords();
+    savePuzzleStatistics(id, dateStarted, true, false, 4)
+    deselectAllWordsNoSound()
 
     for (const category of remainingCategories) {
       await delay(1000);
@@ -165,6 +177,8 @@ export default function useGameLogic(id: string) {
   };
 
   const handleWin = async () => {
+    savePuzzleStatistics(id, dateStarted, true, true, Math.abs(mistakesRemaining - 4))
+
     await delay(1000);
     setIsWon(true);
   };
