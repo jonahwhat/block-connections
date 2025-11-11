@@ -11,11 +11,11 @@ export default function useGameLogic(id: string) {
   });
 
   const [playPop] = useSound('/sounds/pop.mp3', {
-    volume: 0.1,
+    volume: 0.03,
   });
 
   const [playEquip] = useSound('/sounds/equip.mp3', {
-    volume: 0.2,
+    volume: 0.1,
   });
 
   const [playLevelup] = useSound('/sounds/levelup.mp3', {
