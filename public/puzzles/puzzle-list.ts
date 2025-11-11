@@ -92,6 +92,32 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["BLACKSTONE", "SOUL SAND", "DRIED GHAST", "OBSIDIAN"],
     level: 4,
   },
+],
+
+"005" : [
+    {
+    category: "GOLDEN ITEMS",
+    items: ["GOLDEN APPLE", "GOLD NUGGET", "GOLDEN CARROT", "GOLDEN BOOTS"],
+    level: 1,
+  },
+    {
+    category: 'ITEMS FROM ORES',
+    items: ["REDSTONE DUST", "DIAMOND", "EMERALD", "LAPIS LAZULI"],
+    level: 2,
+  },  
+  {
+    category: "ITEMS THAT CAN BE THROWN",
+    items: ["SNOWBALL", "ENDER PEARL", "EGG", "WIND CHARGE"],
+    level: 3,
+  },
+  {
+    category: "ITEMS THAT CAN BE PLACED IN THE WORLD",
+    items: ["SNIFFER EGG", "FLOWER POT", "CANDLE", "CAMPFIRE"],
+    level: 4,
+  },
+
+
+  
 ]
 
 }
