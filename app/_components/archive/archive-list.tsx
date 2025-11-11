@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { Alfa_Slab_One } from 'next/font/google'
 import useSound from "use-sound";
