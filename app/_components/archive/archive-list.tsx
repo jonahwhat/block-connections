@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Alfa_Slab_One } from 'next/font/google'
 import useSound from "use-sound";
 import CountdownTimer from "../countdown";
+import { useEffect, useState } from "react";
+import { PuzzleStatistics } from "@/app/_types";
 
 const alfaSlabOne = Alfa_Slab_One({
   subsets: ['latin'],
@@ -17,20 +19,17 @@ type ArchiveProps = {
 
 export default function ArchiveList(props: ArchiveProps) {
 
-  if (typeof window == 'undefined') {
-    return(
-      <></>
-    )
-  }
-
   const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
   const playSoundClick = () => {playClick()};
   const [playNo] = useSound('/sounds/villagerno.mp3', {volume: 0.4,});
   const playSoundNo = () => {playNo()};
   
-  const stats = JSON.parse(localStorage.getItem("puzzleStatistics") ?? "{}");
+  const [stats, setItem] = useState<PuzzleStatistics>({});;
 
 
+  useEffect(() => {
+    setItem(JSON.parse(localStorage.getItem("puzzleStatistics") ?? "{}"));
+  }, [])
 
 
   function getPuzzleColorClass(id: string) {

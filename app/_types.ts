@@ -4,6 +4,17 @@ export type Category = {
   level: 1 | 2 | 3 | 4;
 };
 
+type PuzzleStat = {
+  puzzle_id: string;
+  date_started: number;
+  date_solved: number;
+  played: boolean;
+  solved: boolean;
+  mistakes: number;
+};
+
+export type PuzzleStatistics = Record<string, PuzzleStat>;
+
 export type Word = {
   word: string;
   level: 1 | 2 | 3 | 4;
