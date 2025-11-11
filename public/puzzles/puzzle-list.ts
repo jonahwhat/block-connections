@@ -4,6 +4,11 @@ export const puzzleList: { [id: string]: Category[] } = {
   
   "001": [
   {
+    category: "LEAF BLOCKS",
+    items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
+    level: 1,
+  },
+  {
     category: 'BLOCKS AFFECTED BY GRAVITY',
     items: ["ANVIL", "DRAGON EGG", "GRAVEL", "SAND"],
     level: 2,
@@ -17,11 +22,6 @@ export const puzzleList: { [id: string]: Category[] } = {
     category: "DYEABLE BLOCKS",
     items: ["CANDLE", "SHULKER BOX", "GLASS", "TERRACOTTA"],
     level: 4,
-  },
-  {
-    category: "LEAF BLOCKS",
-    items: ["AZALEA LEAVES", "OAK LEAVES", "BIRCH LEAVES", "CHERRY LEAVES"],
-    level: 1,
   },
 ],
 
@@ -49,6 +49,11 @@ export const puzzleList: { [id: string]: Category[] } = {
 ],
 
 "003" : [
+  {
+    category: "CAN BE USED AS FUEL IN FURNACES",
+    items: ["COAL", "OAK PLANKS", "LAVA BUCKET", "BLAZE ROD"],
+    level: 1,
+  },
     {
     category: 'ITEMS USED TO CRAFT A CAKE',
     items: ["MILK BUCKET", "SUGAR", "EGG", "WHEAT"],
@@ -64,28 +69,23 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["REDSTONE DUST", "IRON INGOT", "NETHER QUARTZ", "LAPIS LAZULI"],
     level: 4,
   },
-  {
-    category: "CAN BE USED AS FUEL IN FURNACES",
-    items: ["COAL", "OAK PLANKS", "LAVA BUCKET", "BLAZE ROD"],
-    level: 1,
-  },
 ],
 
 "004" : [
     {
-    category: 'FOUND IN JUNGLES',
-    items: ["PANDA", "JUNGLE LEAVES", "BAMBOO", "COCOA"],
-    level: 3,
+    category: "STAGES OF COPPER",
+    items: ["BLOCK OF COPPER", "EXPOSED COPPER", "WEATHERED COPPER", "OXIDIZED COPPER"],
+    level: 1,
   },
-  {
+    {
     category: "BLOCKS ADDED IN APRIL FOOLS UPDATES",
     items: ["BLOCK OF AMBER", "POTONE", "COPPER SINK", "CHEESE"],
     level: 2,
   },
-  {
-    category: "STAGES OF COPPER",
-    items: ["BLOCK OF COPPER", "EXPOSED COPPER", "WEATHERED COPPER", "OXIDIZED COPPER"],
-    level: 1,
+    {
+    category: 'FOUND IN JUNGLES',
+    items: ["PANDA", "JUNGLE LEAVES", "BAMBOO", "COCOA"],
+    level: 3,
   },
   {
     category: "PIGLIN BARTERING TRADES",
@@ -115,9 +115,5 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["SNIFFER EGG", "FLOWER POT", "CANDLE", "CAMPFIRE"],
     level: 4,
   },
-
-
-  
 ]
-
 }
