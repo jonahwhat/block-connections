@@ -115,5 +115,29 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["SNIFFER EGG", "FLOWER POT", "CANDLE", "CAMPFIRE"],
     level: 4,
   },
+],
+
+"006" : [
+    {
+    category: "DYES",
+    items: ["MAGENTA DYE", "WHITE DYE", "ORANGE DYE", "LIGHT BLUE DYE"],
+    level: 1,
+  },
+  {
+    category: "EXCLUSIVE TO MINECRAFT EDUCATION EDITION",
+    items: ["SALT", "SUPER FERTILIZER", "ANTIDOTE", "PHOTO"],
+    level: 2,
+  },
+  {
+    category: "CRAFTED WITH REDSTONE DUST",
+    items: ["NOTE BLOCK", "PISTON", "REDSTONE REPEATER", "COMPASS"],
+    level: 3,
+  },  
+  {
+    category: "ITEMS WITH A MAX STACK SIZE OF 16",
+    items: ["SNOWBALL", "BUCKET", "ARMOR STAND", "OAK SIGN"],
+    level: 4,
+  },
 ]
+
 }
