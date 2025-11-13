@@ -138,6 +138,29 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["SNOWBALL", "BUCKET", "ARMOR STAND", "OAK SIGN"],
     level: 4,
   },
+],
+
+"007" : [
+    {
+    category: "CRAFTED WITH GOLD INGOTS",
+    items: ["BLOCK OF GOLD", "CLOCK", "GOLDEN APPLE", "GOLDEN AXE"],
+    level: 1,
+  },
+  {
+    category: "CRAFTED WITH GREEN DYE",
+    items: ["GREEN BUNDLE", "GREEN CANDLE", "GREEN WOOL", "LIME DYE"],
+    level: 2,
+  },
+  {
+    category: "CRAFTED WITH PRISMARINE SHARDS",
+    items: ["DARK PRISMARINE", "PRISMARINE", "PRISMARINE BRICKS", "SEA LANTERN"],
+    level: 3,
+  },  
+  {
+    category: "CRAFTED WITH AMETHYST SHARDS",
+    items: ["BLOCK OF AMETHYST", "CALIBRATED SKULK SENSOR", "SPYGLASS", "TINTED GLASS"],
+    level: 4,
+  },
 ]
 
 }
