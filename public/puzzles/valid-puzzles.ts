@@ -4,5 +4,6 @@ export const validPuzzleList: string[] = [
     "003",
     "004",
     "005",
-    "006"
+    "006",
+    "007"
 ]
