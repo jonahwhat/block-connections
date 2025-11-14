@@ -161,6 +161,29 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["BLOCK OF AMETHYST", "CALIBRATED SKULK SENSOR", "SPYGLASS", "TINTED GLASS"],
     level: 4,
   },
+],
+
+"008" : [
+    {
+    category: "CAN BE PLANTED IN FARMLAND",
+    items: ["MELON SEEDS", "PITCHER POD", "CARROT", "POTATO"],
+    level: 1,
+  },
+  {
+    category: "CRAFTED WITH STONE",
+    items: ["REDSTONE REPEATER", "STONE BRICKS", "STONE BUTTON", "STONECUTTER"],
+    level: 2,
+  },
+  {
+    category: "FROM MINECRAFT EARTH",
+    items: ["RAINBOW WOOL", "BUCKET OF MUD", "BUTTERCUP", "SKELETON WOLF"],
+    level: 3,
+  },  
+  {
+    category: "CAN INFLICT POISON STATUS EFFECT",
+    items: ["PUFFERFISH", "POISONOUS POTATO", "SPIDER EYE", "SUSPICIOUS STEW"],
+    level: 4,
+  },
 ]
 
 }
