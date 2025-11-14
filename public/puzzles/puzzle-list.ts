@@ -164,14 +164,14 @@ export const puzzleList: { [id: string]: Category[] } = {
 ],
 
 "008" : [
-    {
-    category: "CAN BE PLANTED IN FARMLAND",
-    items: ["MELON SEEDS", "PITCHER POD", "CARROT", "POTATO"],
-    level: 1,
-  },
   {
     category: "CRAFTED WITH STONE",
     items: ["REDSTONE REPEATER", "STONE BRICKS", "STONE BUTTON", "STONECUTTER"],
+    level: 1,
+  },
+    {
+    category: "CAN BE PLANTED IN FARMLAND",
+    items: ["MELON SEEDS", "PITCHER POD", "CARROT", "POTATO"],
     level: 2,
   },
   {
