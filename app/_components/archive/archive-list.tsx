@@ -31,10 +31,10 @@ export default function ArchiveList(props: ArchiveProps) {
 
 
   function getPuzzleColorClass(id: string) {
-    if (!stats[id]) {  return "bg-slate-200 hover:bg-slate-300";}
+    if (!stats[id]) {  return "bg-slate-200 sm:hover:bg-slate-300";}
       const data = stats[id];
-    if (!data?.solved) return "bg-amber-200 hover:bg-amber-300";
-    if (data?.solved) return "bg-lime-200 hover:bg-lime-300";
+    if (!data?.solved) return "bg-rose-200 sm:hover:bg-rose-300";
+    if (data?.solved) return "bg-lime-200 sm:hover:bg-lime-300";
   }
 
   const puzzleTextComponent = (id: string) => {
@@ -66,7 +66,7 @@ export default function ArchiveList(props: ArchiveProps) {
   return (
     <div className="grid py-2 grid-cols-1 gap-3 w-4/5 text-wrap">
       {props.validPuzzleList.map((item) => (
-       <Link key={item} href={`/puzzle/${item}`} className={`${getPuzzleColorClass(item)} py-5 rounded-md text-center`} onClick={playSoundClick}>
+       <Link key={item} href={`/puzzle/${item}`} className={`${getPuzzleColorClass(item)} py-2 md:py-4 rounded-md text-center`} onClick={playSoundClick}>
             <h2 className={`${alfaSlabOne.className} text-black text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.6rem)" }}>
                 Puzzle #{parseInt(item)}
             </h2>
@@ -74,7 +74,7 @@ export default function ArchiveList(props: ArchiveProps) {
             {puzzleTextComponent(item)}
         </Link>
       ))}
-      <button  className={`bg-zinc-100 py-5 rounded-md text-center`}  onClick={playSoundNo}>
+      <button  className={`bg-zinc-100 py-2 md:py-4 rounded-md text-center`}  onClick={playSoundNo}>
             <h2 className={`${alfaSlabOne.className} text-zinc-400 text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.6rem)" }}>
                 Puzzle #{parseInt(props.currentPuzzle) + 1}
             </h2>

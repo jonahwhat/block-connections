@@ -1,14 +1,8 @@
 "use client"
 
-import React from 'react';
-import Countdown from "react-countdown";
-import { useState, useEffect } from "react";
-
-
-
-
-
-
+import React from 'react'
+import Countdown from "react-countdown"
+import { useState, useEffect } from "react"
 
 export default function CountdownTimer() {
 

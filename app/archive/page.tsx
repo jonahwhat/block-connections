@@ -29,7 +29,7 @@ export default function PuzzlePage() {
           Craft Connections
         </h1>
         <hr className="w-full"></hr>
-        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Solve previous puzzles!</h1>
+        <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Click to solve any previous puzzles!</h1>
         <ArchiveList 
           validPuzzleList={validPuzzleList}
           currentPuzzle={currentPuzzleString}

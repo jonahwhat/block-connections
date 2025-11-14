@@ -1,1 +1,1 @@
-export const currentPuzzleString: string = "007"
+export const currentPuzzleString: string = "008"

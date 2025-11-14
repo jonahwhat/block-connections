@@ -7,33 +7,19 @@ import savePuzzleStatistics from "./create-puzzle-statistic";
 
 export default function useGameLogic(id: string) {
 
-  const [playPageFlip] = useSound('/sounds/page.mp3', {
-    volume: 0.5,
-  });
+  const [playPageFlip] = useSound("/sounds/page.mp3", { volume: 0.5,});
 
-  const [playPop] = useSound('/sounds/pop.mp3', {
-    volume: 0.03,
-  });
+  const [playPop] = useSound("/sounds/pop.mp3", { volume: 0.03,});
 
-  const [playEquip] = useSound('/sounds/equip.mp3', {
-    volume: 0.1,
-  });
+  const [playEquip] = useSound("/sounds/equip.mp3", { volume: 0.1,});
 
-  const [playLevelup] = useSound('/sounds/levelup.mp3', {
-    volume: 0.3,
-  });
+  const [playLevelup] = useSound("/sounds/levelup.mp3", { volume: 0.3,});
 
-  const [playHurt] = useSound('/sounds/hurt.mp3', {
-    volume: 0.4,
-  });
-  
-  const [playShatter] = useSound('/sounds/shatter.mp3', {
-    volume: 0.2,
-  });
+  const [playHurt] = useSound("/sounds/hurt.mp3", { volume: 0.4,});
 
-  const [playPing] = useSound('/sounds/ping.mp3', {
-    volume: 0.2,
-  });
+  const [playShatter] = useSound("/sounds/shatter.mp3", { volume: 0.2,});
+
+  const [playPing] = useSound("/sounds/ping.mp3", { volume: 0.2,});
 
   const dateStarted = Date.now()
 

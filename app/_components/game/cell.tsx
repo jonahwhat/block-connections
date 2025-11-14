@@ -14,7 +14,7 @@ export default function Cell(props: CellProps) {
   const bgColor = props.cellValue.selected ? "bg-slate-600" : "bg-slate-200";
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
   const hover = props.cellValue.selected ? "" : "sm:hover:bg-slate-300";
-  const gifList = ["COMPASS", "PRISMARINE", "SEA LANTERN", "CLOCK", "CALIBRATED SKULK SENSOR"]
+  const gifList = ["COMPASS", "PRISMARINE", "SEA LANTERN", "CLOCK", "CALIBRATED SKULK SENSOR", "STONECUTTER"]
   const fileExtension = gifList.includes(props.cellValue.word.toUpperCase()) ? "gif" : "png"
 
   const handleClick = () => {
@@ -22,9 +22,8 @@ export default function Cell(props: CellProps) {
   };
 
   const guessAnimation = props.animateGuess ? "transform -translate-y-2" : "";
-  const wrongGuessAnimation = props.animateWrongGuess
-    ? "animate-horizontal-shake"
-    : "";
+  const wrongGuessAnimation = props.animateWrongGuess ? "animate-horizontal-shake": "";
+  // const shuffleAnimation = props.animateWrongGuess ? "animate-horizontal-shake": "";
 
   return (
     <button
