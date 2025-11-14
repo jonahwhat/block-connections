@@ -22,9 +22,8 @@ export default function Cell(props: CellProps) {
   };
 
   const guessAnimation = props.animateGuess ? "transform -translate-y-2" : "";
-  const wrongGuessAnimation = props.animateWrongGuess
-    ? "animate-horizontal-shake"
-    : "";
+  const wrongGuessAnimation = props.animateWrongGuess ? "animate-horizontal-shake": "";
+  // const shuffleAnimation = props.animateWrongGuess ? "animate-horizontal-shake": "";
 
   return (
     <button
