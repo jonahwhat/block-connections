@@ -9,7 +9,7 @@ export default function ClearedCategory(props: { category: Category }) {
 
   return (
     <div
-      className={`flex flex-col items-center col-span-4 py-6 lg:py-8 rounded-md ${bgColor}`}
+      className={`flex flex-col items-center col-span-4 py-6 lg:py-8 rounded-md animate-fade ${bgColor}`}
     >
       <h1 className="text-black font-bold text-md md:text-xl text-center">
         {props.category.category}
