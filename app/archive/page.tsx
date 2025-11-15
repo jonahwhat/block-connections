@@ -24,11 +24,11 @@ export default function PuzzlePage() {
   return (
     <>
       <Analytics />
-      <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
-        <h1 className={`${alfaSlabOne.className} text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
-          Craft Connections
+      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
+        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.9rem, 3vw, 3rem)" }}>
+          CraftConnections
         </h1>
-        <hr className="w-full"></hr>
+        <hr className="w-full lg:my-1"></hr>
         <h1 className="text-slate-800 my-1" style={{ fontSize: "clamp(0.7rem, 2vw, 1.0rem)" }}>Click to solve any previous puzzles!</h1>
         <ArchiveList 
           validPuzzleList={validPuzzleList}
