@@ -184,6 +184,29 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["PUFFERFISH", "POISONOUS POTATO", "SPIDER EYE", "SUSPICIOUS STEW"],
     level: 4,
   },
+],
+
+"009" : [
+  {
+    category: "WOODEN PLANKS",
+    items: ["OAK PLANKS", "BIRCH PLANKS", "WARPED PLANKS", "MANGROVE PLANKS"],
+    level: 1,
+  },  
+  {
+    category: "BLOCKS FOUND IN CRIMSON FORESTS",
+    items: ["CRIMSON NYLIUM", "CRIMSON STEM", "NETHER WART BLOCK", "SHROOMLIGHT"],
+    level: 2,
+  },
+  {
+    category: "TRANSPARENT BLOCKS",
+    items: ["HONEY BLOCK", "SLIME BLOCK", "ICE", "GLASS"],
+    level: 3,
+  },
+  {
+    category: "BLOCKS DIGGABLE BY THE SNIFFER",
+    items: ["DIRT", "GRASS BLOCK", "MOSS BLOCK", "MUD"],
+    level: 4,
+  },  
 ]
 
 }
