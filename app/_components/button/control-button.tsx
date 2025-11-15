@@ -9,7 +9,7 @@ export default function ControlButton(props: {
 
   return (
     <button
-      className={`${borderColor} border rounded-full ${textColor} font-medium py-3 px-4 text-l ${click}`}
+      className={`${borderColor} border rounded-full ${textColor} font-semibold py-3 px-4 text-l ${click}`}
       onClick={props.onClick}
     >
       {props.text}

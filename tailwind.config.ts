@@ -25,9 +25,14 @@ const config: Config = {
             transform: "translateX(5px)",
           },
         },
+        "fade": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         "horizontal-shake": "horizontal-shake 0.2s ease-in-out infinite",
+        "fade": "fade 0.3s ease-in-out forwards",
       },
     },
   },

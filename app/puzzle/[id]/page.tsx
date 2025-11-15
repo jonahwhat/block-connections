@@ -159,13 +159,13 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
   return (
     <>
       <Analytics />
-      <div className="flex p-1 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
+      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
       <div className="w-full" onClick={playSoundYes}>
-        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.8rem, 2vw, 2.5rem)" }}>
-          Craft Connections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>Puzzle #{ parseInt(id) }</span>
+        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.9rem, 3vw, 3rem)" }}>
+          CraftConnections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.8rem, 2vw, 1.3rem)" }}>Puzzle #{ parseInt(id) }</span>
         </h1>
-        <hr className="w-full"></hr>
-        <h1 className="text-slate-800 my-1 text-center" style={{ fontSize: "clamp(0.85rem, 2vw, 1.0rem)" }}>Group four Minecraft items together that are related!</h1>
+        <hr className="w-full lg:my-1"></hr>
+        <h1 className="text-slate-800 my-1 lg:my-2 text-center" style={{ fontSize: "clamp(0.85rem, 2vw, 1.15rem)" }}>Group four Minecraft items that are related!</h1>
         </div>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
@@ -179,10 +179,12 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className=" text-black my-2 md:my-2 mx-4" style={{ fontSize: "clamp(1rem, 2vw, 1.0rem)" }}>
-          Mistakes Remaining: {" "} 
-          <span className="text-red-600">{'❤︎ '.repeat(mistakesRemaining)}</span>
-        </h2>
+        <div className="flex justify-between my-2 lg:my-5">
+        <h1 className=" text-slate-800 my-0.5 lg:my-1 mx-2 text-center" style={{ fontSize: "clamp(1rem, 2vw, 1.15rem)" }}>
+          Mistakes Remaining:
+        </h1>
+        <span className="text-gray-600 text-center" style={{ fontSize: "clamp(1.2rem, 2vw, 1.5rem)" }}>{'❤︎ '.repeat(mistakesRemaining)}</span>
+        </div>
         {renderControlButtons()}
       </div>
       

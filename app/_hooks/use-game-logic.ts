@@ -21,6 +21,8 @@ export default function useGameLogic(id: string) {
 
   const [playPing] = useSound("/sounds/ping.mp3", { volume: 0.2,});
 
+  const [playVillagerYes] = useSound("/sounds/villageryes.mp3", { volume: 0.3,});
+
   const dateStarted = Date.now()
 
   const [gameWords, setGameWords] = useState<Word[]>([]);
@@ -148,7 +150,8 @@ export default function useGameLogic(id: string) {
     deselectAllWordsNoSound()
 
     for (const category of remainingCategories) {
-      await delay(1000);
+      await delay(1200);
+      playVillagerYes()
       setClearedCategories((prevClearedCategories) => [
         ...prevClearedCategories,
         category,
@@ -158,7 +161,7 @@ export default function useGameLogic(id: string) {
       );
     }
 
-    await delay(1000);
+    await delay(1500);
     setIsLost(true);
   };
 
