@@ -27,12 +27,12 @@ export default function Cell(props: CellProps) {
 
   return (
     <button
-      className={`${bgColor} ${hover} py-1.5 lg:py-3 rounded-md lg:rounded-lg break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
+      className={`${bgColor} ${hover} h-28 xl:h-auto py-1 lg:py-1.5 xl:py-3 rounded-md lg:rounded-xl break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
       <img src={`\\images\\${props.id}\\${props.cellValue.word.toLowerCase()}.${fileExtension}`} className={"mx-auto"} width="70" height="70" draggable="false"></img>
 
-      <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.6rem, 2vw, 1.1rem)" }}>
+      <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>
         {props.cellValue.word.toUpperCase()}
       </h2>
     </button>

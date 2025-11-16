@@ -39,7 +39,7 @@ export default function GameModal(props: GameModalProps) {
     <dialog
       ref={dialogRef}
       onClick={handleClickOutside}
-      className={`backdrop:bg-black backdrop:opacity-75 rounded-md p-8 md:p-12`}
+      className={`backdrop:bg-black backdrop:opacity-75 rounded-xl p-8 md:p-12 animate-fade`}
     >
       {props.children}
     </dialog>

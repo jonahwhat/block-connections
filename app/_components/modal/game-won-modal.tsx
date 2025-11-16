@@ -58,7 +58,7 @@ export default function GameWonModal(props: GameWonModalProps) {
         <h2 className="text-black mb-2">{props.message}</h2>
         <GuessHistory guessHistory={props.guessHistory} />
         <h2 className="text-black mb-3">New puzzle in {" "}
-          <CountdownTimer/>
+          <b><CountdownTimer/></b>
         </h2>
 
         <ControlButton text="Copy Results" onClick={handleCopyResults} />
