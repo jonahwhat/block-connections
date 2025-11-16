@@ -158,8 +158,9 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
 
   return (
     <>
+    {/* <div className="flex h-screen justify-center items-center"> */}
       <Analytics />
-      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-3/4 lg:w-9/12 xl:w-7/12 2xl:w-6/12 mx-auto mt-1">
+      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-3/4 lg:w-10/12 xl:w-9/12 2xl:w-6/12 mx-auto mt-1">
       <div className="w-full" onClick={playSoundYes}>
         <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.9rem, 3vw, 3rem)" }}>
           CraftConnections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.8rem, 2vw, 1.3rem)" }}>Puzzle #{ parseInt(id) }</span>
@@ -196,6 +197,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
         message={getMessage(mistakesRemaining)}
         id={id}
       />
+      {/* </div> */}
     </>
   );
 }
