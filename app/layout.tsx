@@ -7,10 +7,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Craft Connections",
   description: "Group four Minecraft items together that are related!",
-   icons: {
-    icon: "/cube.ico"
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.png",
   },
-  keywords: "Minecraft, Connections, craft, connectionscraft, craftconnections, puzzle game, wordle, word game", 
+  keywords: "Minecraft, Connections, craft, connectionscraft, craftconnections, puzzle game, wordle, word game, minecraft connections, craftconnections.net", 
+  twitter: {
+    title: "Craft Connections",
+    description: "Group four Minecraft items together that are related!",
+  },
+  verification: {
+    google: "TsXpzkOmM6ys5hHfwm3kEceFfCKnsWiKukj4f9Dmj8w"
+  }
 };
 
 export default function RootLayout({
@@ -20,6 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta property="og:title" content="Craft Connections - Daily Minecraft Puzzle" />
+      <meta property="og:description" content="Group four Minecraft items together that are related!" />
       <body className={inter.className}>{children}</body>
     </html>
   );
