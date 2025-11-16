@@ -203,8 +203,31 @@ export const puzzleList: { [id: string]: Category[] } = {
     level: 3,
   },
   {
-    category: "BLOCKS DIGGABLE BY THE SNIFFER",
+    category: "BLOCKS DIGGABLE BY SNIFFERS",
     items: ["DIRT", "GRASS BLOCK", "MOSS BLOCK", "MUD"],
+    level: 4,
+  },  
+],
+
+"010" : [
+  {
+    category: "FLOWERS",
+    items: ["BLUE ORCHID", "AZURE BLUET", "ALLIUM", "DANDELION"],
+    level: 1,
+  },  
+  {
+    category: "CRAFTED WITH DIAMONDS",
+    items: ["ENCHANTING TABLE", "DIAMOND SWORD", "JUKEBOX", "BLOCK OF DIAMOND"],
+    level: 2,
+  },
+  {
+    category: "CAN BE SMELTED IN A FURNACE",
+    items: ["ANCIENT DEBRIS", "CLAY BALL", "CACTUS", "GOLDEN SWORD"],
+    level: 3,
+  },
+  {
+    category: "DROPPED BY WITCHES",
+    items: ["REDSTONE DUST", "GLASS BOTTLE", "GLOWSTONE DUST", "SPIDER EYE"],
     level: 4,
   },  
 ]
