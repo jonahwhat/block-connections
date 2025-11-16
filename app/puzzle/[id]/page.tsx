@@ -17,6 +17,7 @@ import { Alfa_Slab_One } from 'next/font/google'
 import Link from "next/link";
 import useSound from "use-sound";
 import { useRouter } from "next/navigation";
+import CountdownTimer from "@/app/_components/countdown";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -151,6 +152,33 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
     }
   };
 
+  const renderMistakes = () => {
+    const showMistakes = (
+        <div className="flex justify-between my-2 lg:my-5">
+        <h1 className=" text-slate-800 my-0.5 lg:my-1 mx-2 text-center" style={{ fontSize: "clamp(1rem, 2vw, 1.15rem)" }}>
+          Mistakes Remaining:
+        </h1>
+        <span className="text-gray-600 text-center" style={{ fontSize: "clamp(1.2rem, 2vw, 1.5rem)" }}>{'❤︎ '.repeat(mistakesRemaining)}</span>
+        </div>
+    );
+
+    const showCountdown = (
+      <div className="flex justify-between my-2 lg:my-5">
+        <h1 className="text-slate-800 my-0.5 lg:my-1 mx-2 text-center" style={{ fontSize: "clamp(1rem, 2vw, 1.15rem)" }}>New puzzle in {" "}
+          <b><CountdownTimer/></b>
+        </h1>
+        </div>
+    );
+
+    if (isWon) {
+      return showCountdown;
+    } else if (isLost) {
+      return showCountdown;
+    } else {
+      return showMistakes;
+    }
+  };
+
   // if id > maxid or its an invalid id, route to main page
   if (!validPuzzleList.includes(id)) {
     redirect("/");
@@ -180,12 +208,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <div className="flex justify-between my-2 lg:my-5">
-        <h1 className=" text-slate-800 my-0.5 lg:my-1 mx-2 text-center" style={{ fontSize: "clamp(1rem, 2vw, 1.15rem)" }}>
-          Mistakes Remaining:
-        </h1>
-        <span className="text-gray-600 text-center" style={{ fontSize: "clamp(1.2rem, 2vw, 1.5rem)" }}>{'❤︎ '.repeat(mistakesRemaining)}</span>
-        </div>
+        {renderMistakes()}
         {renderControlButtons()}
       </div>
       
