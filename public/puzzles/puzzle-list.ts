@@ -230,6 +230,29 @@ export const puzzleList: { [id: string]: Category[] } = {
     items: ["REDSTONE DUST", "GLASS BOTTLE", "GLOWSTONE DUST", "SPIDER EYE"],
     level: 4,
   },  
+],
+
+"011" : [
+  {
+    category: "ORES",
+    items: ["IRON ORE", "DIAMOND ORE", "NETHER QUARTZ ORE", "COPPER ORE"],
+    level: 1,
+  },  
+  {
+    category: "GIVES OFF LIGHT",
+    items: ["OCHRE FROGLIGHT", "GLOWSTONE", "TORCH", "CRYING OBSIDIAN"],
+    level: 2,
+  },
+  {
+    category: "CAN BE PLACED IN A FLOWER POT",
+    items: ["CACTUS", "AZALEA", "POPPY", "WARPED FUNGUS"],
+    level: 3,
+  },
+  {
+    category: "CAN BE WATERLOGGED",
+    items: ["CHEST", "IRON CHAIN", "WARPED FENCE", "OAK LEAVES"],
+    level: 4,
+  },  
 ]
 
 }
