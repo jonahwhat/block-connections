@@ -1,27 +1,30 @@
+"use client"
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { puzzleList } from "../../public/puzzles/puzzle-list";
-import { Category, SubmitResult, Word } from "../_types";
+import { Category, CurrentPuzzleStatus, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 import useSound from 'use-sound';
 import savePuzzleStatistics from "./create-puzzle-statistic";
+import { createCurrentPuzzleStorage, updateCurrentPuzzleMistakes } from "./update-current-puzzle";
 
 export default function useGameLogic(id: string) {
 
-  const [playPageFlip] = useSound("/sounds/page.mp3", { volume: 0.5,});
+  const [playPageFlip] = useSound("/sounds/page.mp3", { volume: 0.5, });
 
-  const [playPop] = useSound("/sounds/pop.mp3", { volume: 0.03,});
+  const [playPop] = useSound("/sounds/pop.mp3", { volume: 0.03, });
 
-  const [playEquip] = useSound("/sounds/equip.mp3", { volume: 0.1,});
+  const [playEquip] = useSound("/sounds/equip.mp3", { volume: 0.1, });
 
-  const [playLevelup] = useSound("/sounds/levelup.mp3", { volume: 0.3,});
+  const [playLevelup] = useSound("/sounds/levelup.mp3", { volume: 0.3, });
 
-  const [playHurt] = useSound("/sounds/hurt.mp3", { volume: 0.4,});
+  const [playHurt] = useSound("/sounds/hurt.mp3", { volume: 0.4, });
 
-  const [playShatter] = useSound("/sounds/shatter.mp3", { volume: 0.2,});
+  const [playShatter] = useSound("/sounds/shatter.mp3", { volume: 0.2, });
 
-  const [playPing] = useSound("/sounds/ping.mp3", { volume: 0.2,});
+  const [playPing] = useSound("/sounds/ping.mp3", { volume: 0.2, });
 
-  const [playVillagerYes] = useSound("/sounds/villageryes.mp3", { volume: 0.3,});
+  const [playVillagerYes] = useSound("/sounds/villageryes.mp3", { volume: 0.3, });
 
   const dateStarted = Date.now()
 
@@ -30,14 +33,38 @@ export default function useGameLogic(id: string) {
     () => gameWords.filter((item) => item.selected),
     [gameWords]
   );
-  
+
+  // createCurrentPuzzleStorage(id)
+
+  const [storedPuzzleStatus, setStoredPuzzleStatus] = useState<CurrentPuzzleStatus>({});
+
   const categories: Category[] = puzzleList[id]
 
   const [clearedCategories, setClearedCategories] = useState<Category[]>([]);
   const [isWon, setIsWon] = useState(false);
   const [isLost, setIsLost] = useState(false);
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
+
+
   const guessHistoryRef = useRef<Word[][]>([]);
+
+
+
+  // useEffect(() => {
+  //   setStoredPuzzleStatus(JSON.parse(localStorage.getItem("currentPuzzleStatus") ?? "{}"));
+  // }, [])
+
+
+  // useEffect(() => {
+  //   const parsed = JSON.parse(localStorage.getItem("currentPuzzleStatus") ?? "{}");
+
+  //   try {
+  //     const mistakesStored = parsed[id]["mistakesRemaining"]
+  //     setMistakesRemaning(mistakesStored)
+  //   } catch (e) {
+
+  //   }
+  // }, [])
 
   useEffect(() => {
     const words: Word[] = categories
@@ -78,7 +105,7 @@ export default function useGameLogic(id: string) {
     );
   };
 
-    const deselectAllWordsNoSound = () => {
+  const deselectAllWordsNoSound = () => {
     setGameWords(
       gameWords.map((item) => {
         return { ...item, selected: false };
@@ -130,6 +157,7 @@ export default function useGameLogic(id: string) {
 
   const getIncorrectResult = (maxLikeness: number): SubmitResult => {
     setMistakesRemaning(mistakesRemaining - 1);
+    // updateCurrentPuzzleMistakes(id, mistakesRemaining - 1)
     playHurt()
     if (mistakesRemaining === 1) {
       playShatter()

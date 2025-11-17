@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { CellAnimationState, Word } from "../_types";
 import { delay } from "../_utils";

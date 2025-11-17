@@ -13,7 +13,17 @@ type PuzzleStat = {
   mistakes: number;
 };
 
+type CurrentPuzzle = {
+  puzzle_id: string,
+  mistakesRemaining: number,
+  gameWords: Word[],
+  clearedCategories: Category[],
+  guessHistory: Word[][],
+}
+
 export type PuzzleStatistics = Record<string, PuzzleStat>;
+
+export type CurrentPuzzleStatus = Record<string, CurrentPuzzle>
 
 export type Word = {
   word: string;
