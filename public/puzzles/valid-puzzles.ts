@@ -8,5 +8,6 @@ export const validPuzzleList: string[] = [
     "007",
     "008",
     "009",
-    "010"
+    "010",
+    "011"
 ]
