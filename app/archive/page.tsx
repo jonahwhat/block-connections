@@ -1,8 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
 import { Alfa_Slab_One } from 'next/font/google'
-import { validPuzzleList } from "../../public/puzzles/valid-puzzles";
 import ArchiveList from "../_components/archive/archive-list";
 import { currentPuzzleString } from "@/public/puzzles/current";
 import Link from "next/link";
@@ -34,7 +32,6 @@ export default function PuzzlePage() {
         <hr className="w-full lg:my-1"></hr>
         <h1 className="text-slate-800 my-1 lg:my-2 text-center" style={{ fontSize: "clamp(0.85rem, 2vw, 1.15rem)" }}>Click to solve any previous puzzles!</h1>
         <ArchiveList 
-          validPuzzleList={validPuzzleList}
           currentPuzzle={currentPuzzleString}
         />
 

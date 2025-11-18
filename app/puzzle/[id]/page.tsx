@@ -12,12 +12,11 @@ import { SubmitResult, Word } from "../../_types";
 import { getPerfection, getMessage } from "../../_utils";
 import { Analytics } from "@vercel/analytics/next"
 import { redirect } from "next/navigation";
-import { validPuzzleList } from "../../../public/puzzles/valid-puzzles";
 import { Alfa_Slab_One } from 'next/font/google'
-import Link from "next/link";
 import useSound from "use-sound";
 import { useRouter } from "next/navigation";
 import CountdownTimer from "@/app/_components/countdown";
+import { puzzleList } from "@/public/puzzles/puzzle-list";
 
 type PuzzlePageProps = {
   params: { id: string };
@@ -180,7 +179,7 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
   };
 
   // if id > maxid or its an invalid id, route to main page
-  if (!validPuzzleList.includes(id)) {
+  if (!Object.keys(puzzleList).includes(id)) {
     redirect("/");
   }
 
