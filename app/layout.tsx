@@ -7,11 +7,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "CraftConnections",
   description: "Group four Minecraft items together that are related!",
+  applicationName: "CraftConnections",
+  creator: "CraftConnections",
+  authors: {
+    name: "CraftConnections",
+    url: "https://craftconnections.net"
+  },
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.png",
+    shortcut: "/favicon-large.ico",
   },
-  keywords: "Minecraft, Connections, craft, connectionscraft, craftconnections, puzzle game, wordle, word game, minecraft connections, craftconnections.net",
+  keywords: "craftconnections, minecraftconnections, craftconnections.net, Minecraft, Connections",
   twitter: {
     title: "CraftConnections",
     description: "Group four Minecraft items together that are related!",
@@ -39,10 +46,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <meta property="og:title" content="CraftConnections - Daily Minecraft Puzzle" />
       <meta property="og:description" content="Group four Minecraft items together that are related!" />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+              <div itemScope itemType="https://craftconnections.net">
+        <meta itemProp="name" content="CraftConnections" />
+        <meta itemProp="alternateName" content="CraftConnections" />
+      </div>
+        {children}</body>
     </html>
   );
 }
