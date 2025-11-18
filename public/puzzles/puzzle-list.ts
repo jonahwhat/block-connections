@@ -239,7 +239,7 @@ export const puzzleList: { [id: string]: Category[] } = {
       level: 1,
     },
     {
-      category: "GIVES OFF LIGHT",
+      category: "BLOCKS THAT GIVE OFF LIGHT",
       items: ["OCHRE FROGLIGHT", "GLOWSTONE", "TORCH", "CRYING OBSIDIAN"],
       level: 2,
     },
