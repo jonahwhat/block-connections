@@ -4,6 +4,7 @@ import useSound from "use-sound";
 import CountdownTimer from "../countdown";
 import { useEffect, useState } from "react";
 import { PuzzleStatistics } from "@/app/_types";
+import { puzzleList } from "@/public/puzzles/puzzle-list";
 
 const alfaSlabOne = Alfa_Slab_One({
   subsets: ['latin'],
@@ -11,7 +12,6 @@ const alfaSlabOne = Alfa_Slab_One({
 });
 
 type ArchiveProps = {
-  validPuzzleList: string[];
   currentPuzzle: string;
 };
 
@@ -65,7 +65,7 @@ export default function ArchiveList(props: ArchiveProps) {
 
   return (
     <div className="grid py-2 grid-cols-1 gap-3 w-4/5 text-wrap">
-      {props.validPuzzleList.map((item) => (
+      {Object.keys(puzzleList).map((item) => (
        <Link key={item} href={`/puzzle/${item}`} className={`${getPuzzleColorClass(item)} py-2 md:py-4 rounded-md text-center`} onClick={playSoundClick}>
             <h2 className={`${alfaSlabOne.className} text-black text-base text-center font-bold`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.6rem)" }}>
                 Puzzle #{parseInt(item)}
