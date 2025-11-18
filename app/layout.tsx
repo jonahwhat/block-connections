@@ -50,15 +50,27 @@ export default function RootLayout({
     <html lang="en">
       <meta property="og:title" content="CraftConnections - Daily Minecraft Puzzle" />
       <meta property="og:description" content="Group four Minecraft items together that are related! New puzzles added daily." />
-      <link rel="icon" href="/favicon.ico" sizes="144x144"/>
-      <link rel="icon" href="/favicon-48x48.png" sizes="48x48"/>
-      <link rel="icon" href="/icon-large.png" sizes="192x192"/>
-      <link rel="apple-touch-icon" href="/favicon.png"/>
+      <link rel="icon" href="/favicon.ico" sizes="144x144" />
+      <link rel="icon" href="/favicon-48x48.png" sizes="48x48" />
+      <link rel="icon" href="/icon-large.png" sizes="192x192" />
+      <link rel="apple-touch-icon" href="/favicon.png" />
       <meta property="og:locale" content="en_US" />
       <body className={inter.className}>
-        <div itemScope itemType="https://craftconnections.net">
+        <div itemScope itemType="https://schema.org/WebSite">
           <meta itemProp="name" content="CraftConnections - Daily Minecraft Puzzle" />
+          <meta itemProp="url" content="https://craftconnections.net" />
           <meta itemProp="alternateName" content="CraftConnections" />
+        </div>
+        <div itemScope itemType="https://schema.org/Game">
+          <meta itemProp="name" content="CraftConnections - Daily Minecraft Puzzle" />
+          <meta itemProp="gamePlatform" content="Web" />
+          <meta itemProp="genre" content="Puzzle" />
+          <meta itemProp="url" content="https://craftconnections.net" />
+        </div>
+        <div itemScope itemType="https://schema.org/Puzzle">
+          <meta itemProp="name" content="CraftConnections Daily Puzzle" />
+          <meta itemProp="datePublished" content="2025-02-12" />
+          <meta itemProp="inLanguage" content="en" />
         </div>
         {children}</body>
     </html>
