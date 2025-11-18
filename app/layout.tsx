@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   keywords: "Minecraft, Connections, craft, connectionscraft, craftconnections, puzzle game, wordle, word game, minecraft connections, craftconnections.net",
   twitter: {
-    title: "Craft Connections",
+    title: "CraftConnections",
     description: "Group four Minecraft items together that are related!",
   },
   verification: {
@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <meta property="og:title" content="Craft Connections - Daily Minecraft Puzzle" />
+      <meta property="og:title" content="CraftConnections - Daily Minecraft Puzzle" />
       <meta property="og:description" content="Group four Minecraft items together that are related!" />
       <body className={inter.className}>{children}</body>
     </html>
