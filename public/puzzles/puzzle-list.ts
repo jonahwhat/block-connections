@@ -276,6 +276,29 @@ export const puzzleList: { [id: string]: Category[] } = {
       items: ["MACE", "COBWEB", "WATER BUCKET", "SLIME BLOCK"],
       level: 4,
     }
+  ],
+
+  "013": [
+    {
+      category: "ENCHANTED IN AN ENCHANTING TABLE",
+      items: ["MACE", "CROSSBOW", "CHAINMAIL LEGGINGS", "DIAMOND SHOVEL"],
+      level: 1,
+    },
+    {
+      category: "BLOCKS FOUND IN DESERTS",
+      items: ["TALL DRY GRASS", "SANDSTONE", "DEAD BUSH", "CACTUS"],
+      level: 2,
+    },
+    {
+      category: "BLOCKS THAT EMIT PARTICLES",
+      items: ["MYCELIUM", "CRYING OBSIDIAN", "CHERRY LEAVES", "TORCH"],
+      level: 3,
+    },
+    {
+      category: "USED AS ICONS IN THE CREATIVE INVENTORY",
+      items: ["BRICKS", "COMPASS", "CHEST", "BOOKSHELF"],
+      level: 4,
+    }
   ]
 
 }
