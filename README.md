@@ -27,4 +27,5 @@ The development server is now live at http://localhost:3000.
 ## Attributions
 
 Original Connections Clone: https://github.com/srefsland/nyt-connections-clone
+
 Minecraft Block Renders: https://minecraft.wiki/
