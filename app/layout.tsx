@@ -63,13 +63,11 @@ export default function RootLayout({
         </div>
         <div itemScope itemType="https://schema.org/Game">
           <meta itemProp="name" content="CraftConnections - Daily Minecraft Puzzle" />
-          <meta itemProp="gamePlatform" content="Web" />
           <meta itemProp="genre" content="Puzzle" />
           <meta itemProp="url" content="https://craftconnections.net" />
-        </div>
-        <div itemScope itemType="https://schema.org/Puzzle">
-          <meta itemProp="name" content="CraftConnections Daily Puzzle" />
-          <meta itemProp="datePublished" content="2025-02-12" />
+          <meta itemProp="datePublished" content="2025-11-18" />
+          <meta itemProp="dateCreated" content="2025-11-08" />
+          <meta itemProp="dateModified" content="2025-11-18" />
           <meta itemProp="inLanguage" content="en" />
         </div>
         {children}</body>
