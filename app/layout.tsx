@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CraftConnections - Daily Minecraft Puzzle",
-  description: "Group four Minecraft items together that are related! New puzzles added daily.",
+  description: "Group four Minecraft items together that are related!",
   applicationName: "CraftConnections - Daily Minecraft Puzzle",
   creator: "CraftConnections",
   authors: {
@@ -49,7 +49,7 @@ export default function RootLayout({
 
     <html lang="en">
       <meta property="og:title" content="CraftConnections - Daily Minecraft Puzzle" />
-      <meta property="og:description" content="Group four Minecraft items together that are related! New puzzles added daily." />
+      <meta property="og:description" content="Group four Minecraft items together that are related!" />
       <link rel="icon" href="/favicon.ico" sizes="144x144" />
       <link rel="icon" href="/favicon-48x48.png" sizes="48x48" />
       <link rel="icon" href="/icon-large.png" sizes="192x192" />
