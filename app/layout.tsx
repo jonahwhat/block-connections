@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "CraftConnections - Daily Minecraft Puzzle",
   description: "Group four Minecraft items together that are related!",
-  applicationName: "CraftConnections - Daily Minecraft Puzzle",
+  applicationName: "CraftConnections",
   creator: "CraftConnections",
   authors: {
     name: "CraftConnections",
@@ -19,8 +19,12 @@ export const metadata: Metadata = {
     shortcut: "/favicon-large.ico",
   },
   keywords: "craftconnections, minecraftconnections, craftconnections.net, Minecraft, Connections",
+  openGraph: {
+    title: 'CraftConnections',
+    description: 'Group four Minecraft items together that are related!',
+  },
   twitter: {
-    title: "CraftConnections - Daily Minecraft Puzzle",
+    title: "CraftConnections",
     description: "Group four Minecraft items together that are related!",
   },
   verification: {
@@ -48,12 +52,13 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <meta property="og:title" content="CraftConnections - Daily Minecraft Puzzle" />
+      <meta property="og:title" content="CraftConnections" />
       <meta property="og:description" content="Group four Minecraft items together that are related!" />
       <link rel="icon" href="/favicon.ico" sizes="144x144" />
       <link rel="icon" href="/favicon-48x48.png" sizes="48x48" />
       <link rel="icon" href="/icon-large.png" sizes="192x192" />
       <link rel="apple-touch-icon" href="/favicon.png" />
+      <meta name="apple-mobile-web-app-title" content="CraftConnections - Daily Minecraft Puzzle"></meta>
       <meta property="og:locale" content="en_US" />
       <body className={inter.className}>
         <div itemScope itemType="https://schema.org/WebSite">
@@ -62,7 +67,7 @@ export default function RootLayout({
           <meta itemProp="alternateName" content="CraftConnections" />
         </div>
         <div itemScope itemType="https://schema.org/Game">
-          <meta itemProp="name" content="CraftConnections - Daily Minecraft Puzzle" />
+          <meta itemProp="name" content="CraftConnections" />
           <meta itemProp="genre" content="Puzzle" />
           <meta itemProp="url" content="https://craftconnections.net" />
           <meta itemProp="datePublished" content="2025-11-18" />
