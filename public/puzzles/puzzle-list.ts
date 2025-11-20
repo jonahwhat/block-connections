@@ -290,7 +290,7 @@ export const puzzleList: { [id: string]: Category[] } = {
       level: 2,
     },
     {
-      category: "BLOCKS THAT EMIT PARTICLES",
+      category: "BLOCKS THAT NATURALLY EMIT PARTICLES",
       items: ["MYCELIUM", "CRYING OBSIDIAN", "CHERRY LEAVES", "TORCH"],
       level: 3,
     },
