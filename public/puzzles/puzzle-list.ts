@@ -290,7 +290,7 @@ export const puzzleList: { [id: string]: Category[] } = {
       level: 2,
     },
     {
-      category: "BLOCKS THAT EMIT PARTICLES",
+      category: "BLOCKS THAT NATURALLY EMIT PARTICLES",
       items: ["MYCELIUM", "CRYING OBSIDIAN", "CHERRY LEAVES", "TORCH"],
       level: 3,
     },
@@ -313,7 +313,7 @@ export const puzzleList: { [id: string]: Category[] } = {
       level: 2,
     },
     {
-      category: "BLOCKS THAT SHEEPS CAN GRAZE",
+      category: "BLOCKS THAT SHEEPS CAN EAT/GRAZE",
       items: ["SHORT GRASS", "FERN", "TALL DRY GRASS", "GRASS BLOCK"],
       level: 3,
     },
