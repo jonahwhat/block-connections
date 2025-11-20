@@ -299,6 +299,29 @@ export const puzzleList: { [id: string]: Category[] } = {
       items: ["BRICKS", "COMPASS", "CHEST", "BOOKSHELF"],
       level: 4,
     }
+  ],
+
+  "014": [
+    {
+      category: "SPAWN EGGS",
+      items: ["BAT SPAWN EGG", "WITCH SPAWN EGG", "GOAT SPAWN EGG", "VEX SPAWN EGG"],
+      level: 1,
+    },
+    {
+      category: "INDESTRUCTIBLE BLOCKS",
+      items: ["BEDROCK", "END PORTAL FRAME", "STRUCTURE BLOCK", "COMMAND BLOCK"],
+      level: 2,
+    },
+    {
+      category: "BLOCKS THAT SHEEPS CAN GRAZE",
+      items: ["SHORT GRASS", "FERN", "TALL DRY GRASS", "GRASS BLOCK"],
+      level: 3,
+    },
+    {
+      category: "TEXTURES THAT CAN INCLUDE A CREEPER FACE",
+      items: ["CREEPER SPAWN EGG", "CHISELED SANDSTONE", "PAINTING", "CLOUDS"],
+      level: 4,
+    }
   ]
 
 }
