@@ -15,7 +15,9 @@ export default function Cell(props: CellProps) {
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
   const hover = props.cellValue.selected ? "" : "sm:hover:bg-slate-300";
   const gifList = ["COMPASS", "PRISMARINE", "SEA LANTERN", "CLOCK", "CALIBRATED SKULK SENSOR", "STONECUTTER", "CRIMSON STEM"]
+  const roundedList = ["CLOUDS"]
   const fileExtension = gifList.includes(props.cellValue.word.toUpperCase()) ? "gif" : "png"
+  const imageRounded = roundedList.includes(props.cellValue.word.toUpperCase()) ? "rounded-xl" : ""
 
   const handleClick = () => {
     props.onClick(props.cellValue);
@@ -30,7 +32,7 @@ export default function Cell(props: CellProps) {
       className={`${bgColor} ${hover} h-28 xl:h-auto py-1 lg:py-1.5 xl:py-3 rounded-md lg:rounded-xl break-all transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
-      <img src={`\\images\\items\\${props.cellValue.word.toLowerCase().split(" ").join("_")}.${fileExtension}`} alt={props.cellValue.word.toUpperCase()} className={"mx-auto"} width="70" height="70" draggable="false"></img>
+      <img src={`\\images\\items\\${props.cellValue.word.toLowerCase().split(" ").join("_")}.${fileExtension}`} alt={props.cellValue.word.toUpperCase()} className={`mx-auto ${imageRounded}`} width="70" height="70" draggable="false"></img>
 
       <h2 className={`${textColor} text-xs md:text-base text-center font-bold break-normal`} style={{ fontSize: "clamp(0.7rem, 2vw, 1.1rem)" }}>
         {props.cellValue.word.toUpperCase()}
