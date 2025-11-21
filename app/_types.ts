@@ -1,3 +1,5 @@
+import test from "node:test";
+
 export type Category = {
   category: string;
   items: string[];
@@ -38,7 +40,36 @@ export type CellAnimationState = {
   index: number;
 };
 
-export type PuzzleList = {
-  puzzleid: string;
+export type PuzzleDataStructure = {
+  id: string;
   date: string
+  author: string;
+  puzzle: Category[];
 };
+
+export type PuzzleList = Record<string, PuzzleDataStructure>
+
+
+/*
+
+POTENTIAL PUZZLE LIST DATA STRUCTURE
+
+"015": { 
+
+  date: "11/20/2025"
+  author: "craftconnections"
+  puzzle: [
+      {
+        category: "CLIMBABLE BLOCKS",
+        items: ["VINES", "LADDER", "TWISTING VINES", "SCAFFOLDING"],
+        level: 1,
+      },
+      {
+        ...
+      }
+    ]
+
+  }
+}
+
+*/
