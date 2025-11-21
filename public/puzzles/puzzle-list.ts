@@ -322,6 +322,29 @@ export const puzzleList: { [id: string]: Category[] } = {
       items: ["CREEPER SPAWN EGG", "CHISELED SANDSTONE", "PAINTING", "CLOUDS"],
       level: 4,
     }
+  ],
+
+  "015": [
+    {
+      category: "CLIMBABLE BLOCKS",
+      items: ["VINES", "LADDER", "TWISTING VINES", "SCAFFOLDING"],
+      level: 1,
+    },
+    {
+      category: "THINGS THAT CAN EXPLODE",
+      items: ["TNT", "TNT MINECART", "END CRYSTAL", "BED"],
+      level: 2,
+    },
+    {
+      category: "ITEMS USED TO CRAFT A PISTON",
+      items: ["OAK PLANKS", "COBBLESTONE", "REDSTONE DUST", "IRON INGOT"],
+      level: 3,
+    },
+    {
+      category: "_ _ _ _ BLOCK",
+      items: ["BONE BLOCK", "MOSS BLOCK", "NOTE BLOCK", "SNOW BLOCK"],
+      level: 4,
+    }
   ]
 
 }
