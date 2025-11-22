@@ -345,6 +345,29 @@ export const puzzleList: { [id: string]: Category[] } = {
       items: ["BONE BLOCK", "MOSS BLOCK", "NOTE BLOCK", "SNOW BLOCK"],
       level: 4,
     }
+  ],
+
+  "016": [
+    {
+      category: "THINGS THAT SLOW THE PLAYER DOWN",
+      items: ["COBWEB", "SOUL SAND", "SNEAKING", "POTION OF SLOWNESS"],
+      level: 1,
+    },
+    {
+      category: "VILLAGER WORKSTATIONS",
+      items: ["STONECUTTER", "SMITHING TABLE", "ANVIL", "ENCHANTING TABLE"],
+      level: 2,
+    },
+    {
+      category: "BLOCKS FOUND ON THE MAIN END ISLAND",
+      items: ["ENDSTONE", "OBSIDIAN", "BEDROCK", "TORCH"],
+      level: 3,
+    },
+    {
+      category: "USES GRASS BLOCK BREAKING SOUNDS",
+      items: ["GRASS BLOCK", "TNT", "HAY BALE", "OAK LEAVES"],
+      level: 4,
+    }
   ]
 
 }
