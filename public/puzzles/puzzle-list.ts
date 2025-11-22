@@ -355,7 +355,7 @@ export const puzzleList: { [id: string]: Category[] } = {
     },
     {
       category: "VILLAGER WORKSTATIONS",
-      items: ["STONECUTTER", "SMITHING TABLE", "ANVIL", "ENCHANTING TABLE"],
+      items: ["STONECUTTER", "SMITHING TABLE", "GRINDSTONE", "COMPOSTER"],
       level: 2,
     },
     {
