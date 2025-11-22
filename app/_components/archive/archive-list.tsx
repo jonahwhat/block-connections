@@ -73,7 +73,7 @@ export default function ArchiveList(props: ArchiveProps) {
       <hr/>
       <Link key={"current_puzzle"} href={`/`} className={`bg-slate-200 sm:hover:bg-slate-300 py-2 md:py-4 rounded-md text-center`} style={{background: "linear-gradient(128deg,rgba(224, 210, 175, 1) 0%, rgba(240, 249, 250, 1) 52%, rgba(184, 184, 227, 1) 100%)"}} onClick={playSoundClick}>
         <h2 className={`${alfaSlabOne.className} text-black text-base text-center font-bold py-1`} style={{ fontSize: "clamp(1.3rem, 2vw, 1.6rem)" }}>
-          Today's Puzzle ⛏️
+          Today&apos;s Puzzle ⛏️
         </h2>
         <h3 className="text-gray-600"><b>Puzzle #{parseInt(currentPuzzleString)}</b> - {dateWritten}</h3>
       </Link>
