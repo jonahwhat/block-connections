@@ -8,20 +8,24 @@ export default function CountdownTimer() {
 
   const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {setHydrated(true)}, [])
+  useEffect(() => { setHydrated(true) }, [])
 
-  if(!hydrated) {
+  if (!hydrated) {
     return null
   }
 
-  const midnight = new Date()
-  midnight.setHours(24, 0, 0, 0)
+  const now = new Date();
+
+  const nowInNY = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+  const nextMidnightNY = new Date(nowInNY.getFullYear(), nowInNY.getMonth(), nowInNY.getDate() + 1);
+
+  const targetDate = new Date(now.getTime() + (nextMidnightNY.getTime() - nowInNY.getTime()));
 
   return (
-      <Countdown 
-        date={midnight} 
-        daysInHours={true}
-        
-      />
+    <Countdown
+      date={targetDate}
+      daysInHours={true}
+    />
   );
 }
