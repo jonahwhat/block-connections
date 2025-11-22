@@ -187,13 +187,13 @@ export default function PuzzlePage({ params }: PuzzlePageProps) {
     <>
     {/* <div className="flex h-screen justify-center items-center"> */}
       <Analytics />
-      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 mx-auto mt-1">
+      <div className="flex p-1 lg:p-6 flex-col items-center w-full md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:w-8/12 mx-auto mt-3">
       <div className="w-full" onClick={playSoundYes}>
-        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold`} style={{ fontSize: "clamp(1.9rem, 3vw, 3rem)" }}>
-          CraftConnections<span className="text-slate-800 font-normal text-2xl ml-2 font-sans" style={{ fontSize: "clamp(0.8rem, 2vw, 1.3rem)" }}>Puzzle #{ parseInt(id) }</span>
+        <h1 className={`${alfaSlabOne.className} text-center text-black text-4xl font-bold sm:my-2`} style={{ fontSize: "clamp(2.2rem, 3.5vw, 3.5rem)" }}>
+          CraftConnections
         </h1>
-        <hr className="w-full lg:my-1"></hr>
-        <h1 className="text-slate-800 my-1 lg:my-2 text-center" style={{ fontSize: "clamp(0.85rem, 2vw, 1.15rem)" }}>Group four Minecraft items that are related!</h1>
+        <h2 className="text-center text-slate-800 font-normal text-2xl font-sans sm:mb-2" style={{ fontSize: "clamp(0.8rem, 2vw, 1.4rem)" }}><b className={`${alfaSlabOne.className} bg-lime-200 px-1.5 py-1 rounded-lg`}>Puzzle #{ parseInt(id) }</b> – Group four things in Minecraft that are related!</h2>
+        <hr className="w-full my-1 py-1"></hr>
         </div>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />

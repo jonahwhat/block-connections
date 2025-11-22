@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
     shortcut: "/favicon-large.ico",
   },
-  keywords: "craftconnections, minecraftconnections, craftconnections.net, Minecraft, Connections",
+  keywords: "craftconnections, craft connections, minecraft connections, craftconnections.net, connections",
   openGraph: {
     title: 'CraftConnections',
     description: 'Group four Minecraft items together that are related!',
