@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CraftConnections - Daily Minecraft Puzzle",
-  description: "Group four Minecraft items together that are related!",
+  description: "Group four things in Minecraft that are related!",
   applicationName: "CraftConnections",
   creator: "CraftConnections",
   authors: {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   keywords: "craftconnections, craft connections, minecraft connections, craftconnections.net, connections",
   openGraph: {
     title: 'CraftConnections',
-    description: 'Group four Minecraft items together that are related!',
+    description: 'Group four things in Minecraft that are related!',
   },
   twitter: {
     title: "CraftConnections",
-    description: "Group four Minecraft items together that are related!",
+    description: "Group four things in Minecraft that are related!",
   },
   verification: {
     google: "TsXpzkOmM6ys5hHfwm3kEceFfCKnsWiKukj4f9Dmj8w"
@@ -53,7 +53,7 @@ export default function RootLayout({
 
     <html lang="en">
       <meta property="og:title" content="CraftConnections" />
-      <meta property="og:description" content="Group four Minecraft items together that are related!" />
+      <meta property="og:description" content="Group four things in Minecraft that are related!" />
       <link rel="icon" href="/favicon.ico" sizes="144x144" />
       <link rel="icon" href="/favicon-48x48.png" sizes="48x48" />
       <link rel="icon" href="/icon-large.png" sizes="192x192" />
