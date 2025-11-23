@@ -29,7 +29,7 @@ export default function GameWonModal(props: GameWonModalProps) {
   const [playClick] = useSound('/sounds/click.mp3', {volume: 0.4,});
 
   const handleCopyResults = async () => {
-    const resultsText = `Craft Connections ⛏️\nPuzzle #${parseInt(props.id)}\n${props.guessHistory
+    const resultsText = `CraftConnections ⛏️\nPuzzle #${parseInt(props.id)}\n${props.guessHistory
       .map(group => group.map(word => getEmoji(word.level)).join(""))
       .join("\n")}\nhttps://craftconnections.net/`;
 
